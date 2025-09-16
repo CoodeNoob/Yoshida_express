@@ -5,7 +5,11 @@
   user-select: none;
 }
 
+/* HOME PAGE  */
 
+
+
+/* BUUS */
 .bus {
   margin: 20px auto;
   padding: 40px 20px;
@@ -77,3 +81,5 @@
   background: #ddd;
   border-radius: 5px;
 }
+
+/* ---  */
