@@ -10,6 +10,16 @@
    --fontColor: #FFFF;
 }
 
+
+/* LOGIN  */
+.kpt
+{
+  width: 400px;
+  height: 400px;
+  background: var(--primaryColor);
+}
+
+
 /* HOME PAGE  */
 
 /*Log In*/
