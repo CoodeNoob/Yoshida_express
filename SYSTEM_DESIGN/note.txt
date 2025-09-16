@@ -1,0 +1,44 @@
+Actor 
+user(passager)
+admin
+payment system
+
+====================
+register 
+login
+view bus(time,routes,seats)
+select seats
+book ticket
+make payement
+cancel ticket
+view ticket detail
+
+==============================
+
+
+Class diagram
+1.user
+userid,name,email,phone,password
+Login().register()
+
+2.bus
+busid,busname,totalSeats
+getAvailablesSeats()
+
+3.route
+routeid,origin,destination,diatance
+
+4.Schedule
+schduleid,date,time,fare,busid,routeid
+
+5.booking
+bookingid,seatno,status(booked,cancled),
+userid,schduleid,
+confirmbooking(),
+cancelbooking()
+
+6.payment
+paymentid,amount,paymentMethod,paymentStatus
+
+
+
