@@ -2,6 +2,8 @@ import { Bus } from './bus.js';
 
 // Create bus objects
 let Bus1 = new Bus("B1", "LUX", 20);
+let Bus2 = new Bus("B2","LAX",20);
+let Bus3 = new Bus("B3","LBX",20);
 
 // Keep track of selected seats
 let selectedSeats = [];
