@@ -5,6 +5,11 @@
   user-select: none;
 }
 
+:root {
+   --primaryColor:#1E3A8A;
+   --fontColor: #FFFF;
+}
+
 /* HOME PAGE  */
 
 
