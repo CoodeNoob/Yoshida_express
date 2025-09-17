@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../ASSETS/style.css">
 </head>
 <body>
+    // Generate seats dynamically
+for (let i = 1; i <= 20; i++) {
+  const seat = document.createElement("div");
+  seat.className = "seat available";
+  seat.innerText = i;
+  seat.onclick = function () { ... }; // toggle selection
+  seatLayout.appendChild(seat);
+}
+
+// Confirm booking
+function confirmBooking() {
+  const bus = document.getElementById("busSelect").value;
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const selectedSeats = Array.from(document.getElementsByClassName("selected")).map(s => s.innerText);
+
+  if (!bus || !name || !email || selectedSeats.length === 0) {
+    alert("Please fill all details and select at least one seat.");
+    return;
+  }
+
+  // Mark seats as booked
+  document.querySelectorAll(".selected").forEach(seat => {
+    seat.classList.remove("selected");
+    seat.classList.add("booked");
+    seat.onclick = null;
+  });
+
+  // Show booking summary
+  document.getElementById("summary").className = "alert alert-success";
+  document.getElementById("summary").innerHTML = `
+    <strong>Booking Confirmed!</strong><br>
+    Bus: ${bus}<br>
+    Passenger: ${name} (${email})<br>
+    Seats: ${selectedSeats.join(", ")}
+  `;
+}
+
     
 </body>
 </html>
