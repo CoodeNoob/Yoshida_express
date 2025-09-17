@@ -10,32 +10,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container p-2">
-            <!-- Logo -->
-            <a class="navbar-brand fw-bold" href="#">YOSHIDA.</a>
+    <div id="header_block"></div>
 
-            <!-- Toggler for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">BOOK HISTORY</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
+    <div class="container py-4">
         <div class="row p-3">
             <div class="col-md-12 text-center fw-bold fs-4">
                 MYAMANDALAR BUS - 04/08/2025
@@ -95,24 +72,13 @@
 
 
 
-
-    <footer class="bg-dark text-white text-center py-3 mt-auto">
-        <div class="container">
-            <p class="mb-1">© 2025 YOSHIDA. All Rights Reserved.</p>
-            <div>
-                <a href="#" class="text-white text-decoration-none mx-2">Privacy Policy</a> |
-                <a href="#" class="text-white text-decoration-none mx-2">Terms of Service</a> |
-                <a href="#" class="text-white text-decoration-none mx-2">Contact</a>
-            </div>
-        </div>
-    </footer>
-
-
-
+    <div id="footer_block"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- BUS LOADED -->
     <script type="module" src="../ASSETS/infra_js/defaultLoading.js"></script>
     <script src="../ASSETS/infra_js/dataStoring.js"></script>
+    <!-- HEADER AND FOOTER LOADING  -->
+    <script src="../LAYOUTS/layoutLoading.js"></script>
 </body>
 
 </html>
