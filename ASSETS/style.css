@@ -167,14 +167,14 @@ footer {
 /* BusRoutes */
 
     .header-section {
-      background-color: #1E3E82;
-      color: white;
+      background-color: var(--primaryColor);
+      color: var(--fontColor);
       text-align: center;
       padding: 50px 20px;
     }
     /* Rectangle Search Box */
     .search-box {
-      background: #fff;
+      background: var(--fontColor);
       border-radius: 10px;
       padding: 10px;
       margin-top: -30px;
@@ -188,14 +188,14 @@ footer {
       flex: 1;
       padding: 10px;
       margin: 0 5px;
-      background: #e6e6e6;
+      background: white;
       border-radius: 5px;
       font-weight: bold;
       color: #333;
     }
     .bus-card {
-      background: #1E3E82;
-      color: white;
+      background: var(--primaryColor);
+      color:  var(--fontColor);
       border-radius: 10px;
       padding: 15px;
       margin: 15px 0;
@@ -206,8 +206,8 @@ footer {
       border-radius: 5px;
     }
     .btn-book {
-      background-color: white;
-      color: #1E3E82;
+      background-color: var(--fontColor);
+      color: var(--primaryColor);
       font-weight: bold;
       border-radius: 10px;
       padding: 5px 15px;
