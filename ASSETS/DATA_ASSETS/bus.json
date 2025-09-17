@@ -6,8 +6,7 @@
     "AvailableSeats": 20,
     "UnitSeatPrice": 20000,
     "Route": { "From": "Yangon", "To": "Mandalay" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },
   "2": {
     "BusName": "Pre Router",
@@ -16,8 +15,7 @@
     "AvailableSeats": 20,
     "UnitSeatPrice": 10000,
     "Route": { "From": "Yangon", "To": "Naypyidaw" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },
   "3": {
     "BusName": "Golden Express",
@@ -26,8 +24,7 @@
     "AvailableSeats": 30,
     "UnitSeatPrice": 15000,
     "Route": { "From": "Yangon", "To": "Taunggyi" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },
   "4": {
     "BusName": "Royal Coach",
@@ -36,8 +33,7 @@
     "AvailableSeats": 25,
     "UnitSeatPrice": 25000,
     "Route": { "From": "Mandalay", "To": "Bagan" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },
   "5": {
     "BusName": "Silver Line",
@@ -46,8 +42,7 @@
     "AvailableSeats": 40,
     "UnitSeatPrice": 18000,
     "Route": { "From": "Yangon", "To": "Pyin Oo Lwin" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },
   "6": {
     "BusName": "Sunrise Travels",
@@ -56,8 +51,7 @@
     "AvailableSeats": 35,
     "UnitSeatPrice": 22000,
     "Route": { "From": "Yangon", "To": "Myeik" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },
   "7": {
     "BusName": "Royal Star",
@@ -66,8 +60,7 @@
     "AvailableSeats": 28,
     "UnitSeatPrice": 17000,
     "Route": { "From": "Yangon", "To": "Pathein" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },
   "8": {
     "BusName": "Express King",
@@ -76,8 +69,7 @@
     "AvailableSeats": 50,
     "UnitSeatPrice": 20000,
     "Route": { "From": "Mandalay", "To": "Muse" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },
   "9": {
     "BusName": "Travel Swift",
@@ -86,8 +78,7 @@
     "AvailableSeats": 15,
     "UnitSeatPrice": 8000,
     "Route": { "From": "Yangon", "To": "Hpa-An" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   },  
   "10": {
     "BusName": "Golden Horizon",
@@ -96,7 +87,6 @@
     "AvailableSeats": 45,
     "UnitSeatPrice": 25000,
     "Route": { "From": "Yangon", "To": "Ngapali" },
-    "DepartureTime": "",
-    "ArrivalTime": ""
+    "DepartureTime": ""
   }
 }

@@ -32,11 +32,6 @@ function formatDateTime(date) {
     return `${year}-${month}-${day}, ${hours}:${minutes} ${ampm}`;
 }
 
-// Example test
-let times = generateTimes(6);
-console.log(times.DepartureTime); // 2025-09-18, 01:30 PM
-console.log(times.ArrivalTime);   // 2025-09-18, 07:30 PM
-
 // DataStoring For Bus
 fetch("../ASSETS/DATA_ASSETS/bus.json")
     .then(response => response.json())
@@ -44,10 +39,8 @@ fetch("../ASSETS/DATA_ASSETS/bus.json")
         Object.keys(buses).forEach(key => {
             let times = generateTimes(7); 
             buses[key].DepartureTime = times.DepartureTime;
-            buses[key].ArrivalTime = times.ArrivalTime;
         });
         localStorage.setItem("Buses", JSON.stringify(buses));
-        console.log("Loaded Successfully");
     })
     .catch(err => console.error("Error loading bus.json:", err));
 
@@ -58,6 +51,5 @@ fetch("../ASSETS/DATA_ASSETS/locations.json")
         Object.keys(loc).forEach(key => {
         });
         localStorage.setItem("Locations", JSON.stringify(loc));
-        console.log("Loaded Successfully 1");
     })
     .catch(err => console.error("Error loading locations.json:", err));

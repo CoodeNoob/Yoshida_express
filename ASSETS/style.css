@@ -40,7 +40,7 @@ body {
   background: #f9fafb;
   color: #212529;
 }
-footer {
+#footer_block {
   margin-top: auto;
 }
 
@@ -142,46 +142,6 @@ footer {
   background: #0b5ed7;
 }
 
-/* === RESPONSIVE TWEAKS === */
-@media (max-width: 991px) { /* Tablets */
-  .bus {
-    height: auto;
-    padding: 25px;
-  }
-  .card {
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 767px) { 
-  .bus {
-    padding: 20px;
-    height: auto;
-  }
-
-  .fw-bold.fs-4 {
-    font-size: 1.2rem; 
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .btn-lg {
-    width: 100%; 
-    font-size: 1rem;
-  }
-
-  footer p {
-    font-size: 0.85rem;
-  }
-
-  footer a {
-    display: block;
-    margin: 5px 0;
-  }
-}
-
 /* BusRoutes */
 
     .header-section {
@@ -236,3 +196,51 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     }
+
+
+
+/* FOOTER      */
+.footer
+{
+  background: var(--primaryColor);
+}
+
+/* === RESPONSIVE TWEAKS === */
+@media (max-width: 991px) { /* Tablets */
+  .bus {
+    height: auto;
+    padding: 25px;
+  }
+  .card {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) { 
+  .bus {
+    padding: 20px;
+    height: auto;
+  }
+
+  .fw-bold.fs-4 {
+    font-size: 1.2rem; 
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .btn-lg {
+    width: 100%; 
+    font-size: 1rem;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+  }
+
+  footer a {
+    display: block;
+    margin: 5px 0;
+  }
+}
