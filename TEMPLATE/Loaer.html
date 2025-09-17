@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bus Driving Loader</title>
+  <style>
+
+    body {
+      background-color: #122C4F; /* fixed background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    @keyframes move-line {
+      0% { left: 0; }
+      100% { left: -60px; }
+    }
+
+    /* bus sits above the road */
+    .bus {
+      position: center;
+      bottom: 36px;               /* small tweak so wheels touch the road */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;                 /* ensure bus is drawn above the road */
+      animation: bounce 0.6s ease-in-out infinite alternate;
+      pointer-events: none;
+      color: #F8F9FA;
+    }
+
+    /* slightly nudge the actual SVG visual down for perfect wheel contact */
+    .bus svg {
+      width: 74px;
+      height: auto;
+      display: block;
+      transform: translateY(2px);
+      color: #F8F9FA;
+    }
+
+    @keyframes bounce {
+      /* keep translateX centering while moving vertically */
+      0%  { transform: translateX(-50%) translateY(0); }
+      100%{ transform: translateX(-50%) translateY(-4px); }
+    }
+
+  </style>
+</head>
+   <body>
+  <div class="loader">
+    <div class="bus" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24">
+	<rect width="24" height="24" fill="none" />
+	<path fill="#CFCDD1" d="M3 6c-1.11 0-2 .89-2 2v7h2a3 3 0 0 0 3 3a3 3 0 0 0 3-3h6a3 3 0 0 0 3 3a3 3 0 0 0 3-3h2V8c0-1.11-.89-2-2-2zm-.5 1.5h4V10h-4zm5.5 0h4V10H8zm5.5 0h4V10h-4zm5.5 0h2.5V13L19 11zm-13 6A1.5 1.5 0 0 1 7.5 15A1.5 1.5 0 0 1 6 16.5A1.5 1.5 0 0 1 4.5 15A1.5 1.5 0 0 1 6 13.5m12 0a1.5 1.5 0 0 1 1.5 1.5a1.5 1.5 0 0 1-1.5 1.5a1.5 1.5 0 0 1-1.5-1.5a1.5 1.5 0 0 1 1.5-1.5" />
+</svg>
+    </div>
+  </div>
+</body>
+</html>
