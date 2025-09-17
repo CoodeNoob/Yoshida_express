@@ -1,0 +1,92 @@
+{
+  "1": {
+    "BusName": "Apex Route",
+    "BusType": "Luxury",
+    "TotalSeat": 20,
+    "AvailableSeats": 20,
+    "UnitSeatPrice": 20000,
+    "Route": { "From": "Yangon", "To": "Mandalay" },
+    "DepartureTime": ""
+  },
+  "2": {
+    "BusName": "Pre Router",
+    "BusType": "Economy",
+    "TotalSeat": 20,
+    "AvailableSeats": 20,
+    "UnitSeatPrice": 10000,
+    "Route": { "From": "Yangon", "To": "Naypyidaw" },
+    "DepartureTime": ""
+  },
+  "3": {
+    "BusName": "Golden Express",
+    "BusType": "Premium",
+    "TotalSeat": 30,
+    "AvailableSeats": 30,
+    "UnitSeatPrice": 15000,
+    "Route": { "From": "Yangon", "To": "Taunggyi" },
+    "DepartureTime": ""
+  },
+  "4": {
+    "BusName": "Royal Coach",
+    "BusType": "VIP",
+    "TotalSeat": 25,
+    "AvailableSeats": 25,
+    "UnitSeatPrice": 25000,
+    "Route": { "From": "Mandalay", "To": "Bagan" },
+    "DepartureTime": ""
+  },
+  "5": {
+    "BusName": "Silver Line",
+    "BusType": "Express",
+    "TotalSeat": 40,
+    "AvailableSeats": 40,
+    "UnitSeatPrice": 18000,
+    "Route": { "From": "Yangon", "To": "Pyin Oo Lwin" },
+    "DepartureTime": ""
+  },
+  "6": {
+    "BusName": "Sunrise Travels",
+    "BusType": "Sleeper",
+    "TotalSeat": 35,
+    "AvailableSeats": 35,
+    "UnitSeatPrice": 22000,
+    "Route": { "From": "Yangon", "To": "Myeik" },
+    "DepartureTime": ""
+  },
+  "7": {
+    "BusName": "Royal Star",
+    "BusType": "Deluxe",
+    "TotalSeat": 28,
+    "AvailableSeats": 28,
+    "UnitSeatPrice": 17000,
+    "Route": { "From": "Yangon", "To": "Pathein" },
+    "DepartureTime": ""
+  },
+  "8": {
+    "BusName": "Express King",
+    "BusType": "Double-Decker",
+    "TotalSeat": 50,
+    "AvailableSeats": 50,
+    "UnitSeatPrice": 20000,
+    "Route": { "From": "Mandalay", "To": "Muse" },
+    "DepartureTime": ""
+  },
+  "9": {
+    "BusName": "Travel Swift",
+    "BusType": "Mini Bus",
+    "TotalSeat": 15,
+    "AvailableSeats": 15,
+    "UnitSeatPrice": 8000,
+    "Route": { "From": "Yangon", "To": "Hpa-An" },
+    "DepartureTime": ""
+  },  
+  "10": {
+    "BusName": "Golden Horizon",
+    "BusType": "Tourist Coach",
+    "TotalSeat": 45,
+    "AvailableSeats": 45,
+    "UnitSeatPrice": 25000,
+    "Route": { "From": "Yangon", "To": "Ngapali" },
+    "DepartureTime": ""
+  }
+}
