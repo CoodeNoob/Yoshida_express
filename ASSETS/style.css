@@ -5,10 +5,16 @@
   user-select: none;
 }
 
+body {
+  position: relative;
+  height: 100vh;
+}
+
 :root {
   /* --primaryColor: #1E3A8A; */
   --primaryColor: #122C4F;
   --fontColor: #FFFF;
+  --hoverColor: rgba(19, 64, 154, 0.987);
 }
 
 
@@ -61,35 +67,27 @@
 
 /* BUUS */
 /* === GLOBAL STRUCTURE === */
-html,
-body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  background: #f9fafb;
-  color: #212529;
-}
-
 #footer_block {
-  margin-top: auto;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
 }
 
 /* === NAVBAR === */
 .navbar {
   background: var(--primaryColor);
 }
- .navbar-brand fw-bold{
+
+.navbar-brand fw-bold {
   margin: 5px;
- }
+}
 
 /* logo photo */
 .logo {
   width: 60px;
   height: 60px;
-  object-fit: contain; /* keeps proportions */
+  object-fit: contain;
+  /* keeps proportions */
   border-radius: 30px;
 }
 
@@ -119,7 +117,7 @@ body {
 .seat {
   width: 70px;
   height: 70px;
-   background: #e9ecef;
+  background: #e9ecef;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
@@ -199,6 +197,15 @@ body {
 
 .selected_description button:hover {
   background: #0b5ed7;
+}
+
+
+.btn-background {
+  background: var(--primaryColor);
+}
+
+.continue-btn:hover {
+  background: var(--hoverColor);
 }
 
 /* ---  */
@@ -359,86 +366,139 @@ body {
 /* ==================================================================== */
 /* BusRoutes */
 
-    .header-section {
-      background-color: var(--primaryColor);
-      color: var(--fontColor);
-      text-align: center;
-      padding: 50px 20px;
-    }
-    /* Rectangle Search Box */
-    .search-box {
-      background: var(--fontColor);
-      border-radius: 10px;
-      padding: 10px;
-      margin-top: -30px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-    }
-    .search-box div {
-      flex: 1;
-      padding: 10px;
-      margin: 0 5px;
-      background: white;
-      border-radius: 5px;
-      font-weight: bold;
-      color: #333;
-    }
-    .bus-card {
-      background: var(--primaryColor);
-      color:  var(--fontColor);
-      border-radius: 10px;
-      padding: 15px;
-      margin: 15px 0;
-    }
-    .bus-card svg {
-      width: 100%;
-      height: 80px;
-      border-radius: 5px;
-    }
-    .btn-book {
-      background-color: var(--fontColor);
-      color: var(--primaryColor);
-      font-weight: bold;
-      border-radius: 10px;
-      padding: 5px 15px;
-      float: right;
-    }
-    .col-8 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    }
+.header-section {
+  background-color: var(--primaryColor);
+  color: var(--fontColor);
+  text-align: center;
+  padding: 50px 20px;
+}
 
+/* Rectangle Search Box */
+.search-box {
+  background: var(--fontColor);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: -30px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.search-box div {
+  flex: 1;
+  padding: 10px;
+  margin: 0 5px;
+  background: white;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.bus-card {
+  background: var(--primaryColor);
+  color: var(--fontColor);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.bus-card svg {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.btn-book {
+  background-color: var(--fontColor);
+  color: var(--primaryColor);
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 15px;
+  float: right;
+}
+
+.col-8 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+/* LOADER  swan htet (18th Sept 2025)*/
+/* bus container */
+/* bus sits above the road */
+.loader-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  /* so it stays on top while scrolling */
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  /* semi-transparent dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  /* make sure it is above all content */
+}
+
+.bus_loader {
+  z-index: 2;
+  background: var(--primaryColor);
+  padding: 20px;
+  border-radius: 50%;
+  animation: bounce 0.3s ease-in infinite alternate;
+}
+
+.bus_loader svg {
+  width: 74px;
+  height: auto;
+  display: block;
+  transform: translateY(2px);
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
 
 
 /* FOOTER      */
-.footer
-{
+.footer {
   background: var(--primaryColor);
 }
 
 /* === RESPONSIVE TWEAKS === */
-@media (max-width: 991px) { /* Tablets */
+@media (max-width: 991px) {
+
+  /* Tablets */
   .bus {
     height: auto;
     padding: 25px;
   }
+
   .card {
     margin-top: 20px;
   }
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
   .bus {
     padding: 20px;
     height: auto;
   }
 
   .fw-bold.fs-4 {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 
   .card {
@@ -446,7 +506,7 @@ body {
   }
 
   .btn-lg {
-    width: 100%; 
+    width: 100%;
     font-size: 1rem;
   }
 

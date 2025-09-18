@@ -88,6 +88,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
+        document.getElementById("go-checkout").addEventListener("click",()=>
+        {
+            let bookedBusInfo = {
+                "busName" : reservedBus.BusName,
+                "busId" : reservedBus.BusId,
+                "bookedSeat" : selectedSeats,
+                "bookedDate" : new Date().toLocaleDateString(),
+                "bookedTime" : new Date().toLocaleTimeString(),
+                "from":reservedBus.Route.From,
+                "to":reservedBus.Route.To
+            }
+
+            localStorage.setItem(
+               "bookedBusInfo", JSON.stringify(bookedBusInfo) 
+            );
+
+
+            document.getElementById("loader-container").classList.remove("d-none");
+            //set timeout
+            setTimeout(()=>
+            {   
+                document.getElementById("loader-container").classList.add("d-none");
+                window.location.href = "./checkout.html"; 
+            },2000)
+            
+            console.log(bookedBusInfo);
+        });
+
+
+        
 
 
     }
@@ -101,10 +131,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const desDiv = document.getElementById("selectedSeatId");
         if (selectedSeats.length > 0) {
             desDiv.innerHTML = selectedSeats
-                .map(seat => `<div class="badge bg-dark m-2 p-3 px-4">${seat}</div>`)
+                .map(seat => `<div class="badge m-2 p-3 px-4 " style="background:#122C4F">${seat}</div>`)
                 .join("");
+            document.getElementById("continue-btn").classList.remove("d-none"); 
+            document.getElementById("head-selected-seat").classList.remove("d-none");     
+            
         } else {
             desDiv.innerHTML = "";
+            document.getElementById("continue-btn").classList.add("d-none");   
+            document.getElementById("head-selected-seat").classList.add("d-none");   
         }
     }
 
