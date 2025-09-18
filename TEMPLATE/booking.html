@@ -10,10 +10,14 @@
 </head>
 
 <body>
+
+    <div class="loader-container d-none" id="loader-container">
+        
+    </div>
     <!-- Header NAV  -->
     <div id="header_block"></div>
 
-    <div class="container py-4">
+    <div class="container py-2">
         <div class="row p-3">
             <div class="col-md-12 text-center fw-bold fs-4">
                 <span id="selectedBusName"> </span> - <span id="selectedBusDate">04/08/2025</span>
@@ -47,19 +51,22 @@
                         <p class="mb-1"><strong>Bus Name:</strong> <span id="busName"></span></p>
                         <p class="mb-1"><strong>Seat Price:</strong> MMK <span id="seatPrice"></span></p>
                         <p class="mb-1"><strong>Total Seat:</strong> <span id="totalSeatSelected"></span></p>
-                        <p class="fw-bold text-success"><strong>Grand Price:</strong> MMK <span id="grandPrice"></span></p>
+                        <p class="fw-bold text-success"><strong>Grand Price:</strong> MMK <span id="grandPrice"></span>
+                        </p>
                     </div>
 
                     <hr>
 
                     <!-- Selected Seats -->
-                    <h6 class="fw-bold">Selected Seats</h6>
+                    <h6 class="fw-bold d-none" id="head-selected-seat">Selected Seats</h6>
                     <div class="mb-4" id="selectedSeatId">
                     </div>
 
                     <!-- Button -->
-                    <div class="text-center">
-                        <button class="btn btn-dark btn-lg px-5 rounded-pill shadow-sm">Continue</button>
+                    <div class="text-center d-none" id="continue-btn">
+                        <button
+                            class="btn continue-btn btn-lg px-3 rounded-1 shadow-sm btn-background text-white fw-bold"
+                            id="go-checkout">Continue</button>
                     </div>
                 </div>
             </div>
@@ -67,14 +74,12 @@
         </div>
     </div>
 
-
-
     <div id="footer_block"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- HEADER AND FOOTER LOADING  -->
     <script src="../LAYOUTS/layoutLoading.js"></script>
     <!-- Load the bus layout   -->
-     <script src="../ASSETS/infra_js/bookingBus.js"></script>
+    <script src="../ASSETS/infra_js/bookingBus.js"></script>
 
 
 </body>
