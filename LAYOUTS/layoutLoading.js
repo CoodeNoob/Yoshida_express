@@ -10,3 +10,9 @@ fetch('../LAYOUTS/header.html')
     .then(data => {
         document.getElementById('header_block').innerHTML = data;
     });
+
+fetch('../LAYOUTS/loader.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('loader-container').innerHTML = data;
+    });
