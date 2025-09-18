@@ -48,6 +48,18 @@ body {
 .navbar {
   background: var(--primaryColor);
 }
+ .navbar-brand fw-bold{
+  margin: 5px;
+ }
+
+/* logo photo */
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain; /* keeps proportions */
+  border-radius: 30px;
+}
+
 
 /* === BUS CONTAINER === */
 .bus {
