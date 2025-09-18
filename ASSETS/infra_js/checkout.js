@@ -51,22 +51,46 @@ function confirmPayment() {
     // Update progress bar
     document.querySelectorAll(".progress-step")[2].classList.add("active");
 
-    // Use the data retrieved from localStorage to populate the receipt
-    if (bookedBusInfo) {
-        document.getElementById("receiptName").textContent = passengerData.name;
-        document.getElementById("receiptPhone").textContent = passengerData.phone;
-        document.getElementById("receiptBusName").textContent = bookedBusInfo.busName;
-        document.getElementById("receiptFrom").textContent = bookedBusInfo.from;
-        document.getElementById("receiptTo").textContent = bookedBusInfo.to;
-        document.getElementById("receiptDate").textContent = bookedBusInfo.bookedDate;
-        document.getElementById("receiptTime").textContent = bookedBusInfo.bookedTime;
-        document.getElementById("receiptSeats").textContent = bookedBusInfo.bookedSeat.join(", ");
-        document.getElementById("receiptGrandPrice").textContent = bookedBusInfo.grandPrice;
-        document.getElementById("receiptPaymentMethod").textContent = getPaymentName(selectedPayment);
-    }
+    // Create a single object with all booking data
+    const newBooking = {
+        name: passengerData.name,
+        phone: passengerData.phone,
+        busName: bookedBusInfo.busName,
+        from: bookedBusInfo.from,
+        to: bookedBusInfo.to,
+        date: bookedBusInfo.bookedDate,
+        time: bookedBusInfo.bookedTime,
+        seats: bookedBusInfo.bookedSeat.join(", "),
+        totalPrice: bookedBusInfo.grandPrice,
+        paymentMethod: selectedPayment
+    };
+    
+    // Save the new booking to history
+    saveToHistory(newBooking);
 
-    console.log("Payment method selected:", selectedPayment);
-    console.log("Passenger info:", passengerData);
+    // Populate the receipt with the newly created booking object
+    document.getElementById("receiptName").textContent = newBooking.name;
+    document.getElementById("receiptPhone").textContent = newBooking.phone;
+    document.getElementById("receiptBusName").textContent = newBooking.busName;
+    document.getElementById("receiptFrom").textContent = newBooking.from;
+    document.getElementById("receiptTo").textContent = newBooking.to;
+    document.getElementById("receiptDate").textContent = newBooking.date;
+    document.getElementById("receiptTime").textContent = newBooking.time;
+    document.getElementById("receiptSeats").textContent = newBooking.seats;
+    document.getElementById("receiptGrandPrice").textContent = newBooking.totalPrice;
+    document.getElementById("receiptPaymentMethod").textContent = getPaymentName(selectedPayment);
+}
+
+// Function to save booking data to localStorage
+function saveToHistory(bookingData) {
+    // Get existing history from localStorage, or initialize an empty array if none exists
+    const history = JSON.parse(localStorage.getItem('bookingHistory')) || [];
+    
+    // Add the new booking data to the history array
+    history.push(bookingData);
+    
+    // Save the updated array back to localStorage
+    localStorage.setItem('bookingHistory', JSON.stringify(history));
 }
 
 // Helper function to convert the payment type to a readable name
