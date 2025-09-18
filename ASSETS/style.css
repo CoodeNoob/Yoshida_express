@@ -318,15 +318,13 @@ body {
 }
 
 /* Receipt Voucher Styling */
+
 .receipt-voucher {
-  max-width: 400px;
-  background: #fff;
-  border: 1px dashed #bbb;
-  border-radius: 15px;
-  position: relative;
-  font-family: "Segoe UI", sans-serif;
-  padding: 25px;
-  margin: 20px auto;
+    border: 1px solid #ccc; /* Makes the border 1px solid grey */
+    /* Add any other existing styles for receipt-voucher here */
+    padding: 20px; /* Example padding */
+    background-color: #fff; /* Example background */
+    border-radius: 8px; /* Example rounded corners */
 }
 
 /* New CSS for centered titles and better receipt layout */
