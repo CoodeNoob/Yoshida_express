@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("go-checkout").addEventListener("click",()=>
         {
+            let grandPrice = selectedSeats.length * reservedBus.UnitSeatPrice;
             let bookedBusInfo = {
                 "busName" : reservedBus.BusName,
                 "busId" : reservedBus.BusId,
@@ -97,7 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "bookedDate" : new Date().toLocaleDateString(),
                 "bookedTime" : new Date().toLocaleTimeString(),
                 "from":reservedBus.Route.From,
-                "to":reservedBus.Route.To
+                "to":reservedBus.Route.To,
+                "grandPrice":grandPrice
             }
 
             localStorage.setItem(
