@@ -8,14 +8,14 @@
 }
 
 :root {
-  --primaryColor: #1E3A8A;
+  /* --primaryColor: #1E3A8A; */
+  --primaryColor: #122C4F;
   --fontColor: #FFFF;
 }
 
 
 /* LOGIN  */
-.kpt
-{
+.kpt {
   width: 400px;
   height: 400px;
   background: var(--primaryColor);
@@ -23,6 +23,38 @@
 
 
 /* HOME PAGE  */
+.hero {
+  background-color: #123c8d;
+  color: white;
+  padding: 60px 20px;
+}
+
+.welcome-icon {
+  font-size: 50px;
+  color: #FBc02D;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-block;
+}
+
+.feature-card {
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.payment-logos img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 5px;
+}
 
 /*Log In*/
 
@@ -31,15 +63,18 @@
 
 /* BUUS */
 /* === GLOBAL STRUCTURE === */
-html, body {
+html,
+body {
   height: 100%;
 }
+
 body {
   display: flex;
   flex-direction: column;
   background: #f9fafb;
   color: #212529;
 }
+
 #footer_block {
   margin-top: auto;
 }
@@ -52,9 +87,10 @@ body {
 /* === BUS CONTAINER === */
 .bus {
   padding: 40px;
-  background: #f8f9fa; /* light gray */
+  background: #f8f9fa;
+  /* light gray */
   border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,17 +120,21 @@ body {
   justify-content: center;
   font-weight: 600;
   color: #495057;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .seat:hover {
   background: #dee2e6;
   transform: scale(1.05);
 }
+
 .seat.ocupied {
-  background: #198754 !important; /* green */
+  background: #198754 !important;
+  /* green */
   color: white;
-  box-shadow: 0 0 10px rgba(25,135,84,0.6);
+  box-shadow: 0 0 10px rgba(25, 135, 84, 0.6);
 }
+
 .aisle {
   width: 35px;
 }
@@ -105,21 +145,24 @@ body {
   padding: 20px;
   border-radius: 12px;
   background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 280px;
   text-align: center;
 }
+
 .selected_description h3 {
   margin-bottom: 12px;
   color: #212529;
   font-weight: 700;
 }
+
 .selected_description ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .selected_description li {
   margin: 6px 0;
   padding: 6px 12px;
@@ -128,6 +171,7 @@ body {
   font-weight: 500;
   color: #495057;
 }
+
 .selected_description button {
   margin-top: 12px;
   background: #0d6efd;
@@ -138,92 +182,111 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .selected_description button:hover {
   background: #0b5ed7;
 }
 
 /* BusRoutes */
 
-    .header-section {
-      background-color: #1E3E82;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
-    /* Rectangle Search Box */
-    .search-box {
-      background: #fff;
-      border-radius: 10px;
-      padding: 10px;
-      margin-top: -30px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-    }
-    .search-box div {
-      flex: 1;
-      padding: 10px;
-      margin: 0 5px;
-      background: #e6e6e6;
-      border-radius: 5px;
-      font-weight: bold;
-      color: #333;
-    }
-    .bus-card {
-      background: #1E3E82;
-      color: white;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 15px 0;
-    }
-    .bus-card svg {
-      width: 100%;
-      height: 80px;
-      border-radius: 5px;
-    }
-    .btn-book {
-      background-color: white;
-      color: #1E3E82;
-      font-weight: bold;
-      border-radius: 10px;
-      padding: 5px 15px;
-      float: right;
-    }
-    .col-8 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    }
+.header-section {
+  background-color: #1E3E82;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* Rectangle Search Box */
+.not-found-card {
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.not-found-img {
+  max-width: 250px; /* control size of cartoon */
+  height: auto;
+}
+
+.search-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: -30px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.search-box div {
+  flex: 1;
+  padding: 10px;
+  margin: 0 5px;
+  background: #e6e6e6;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.bus-card {
+  background: #1E3E82;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.bus-card svg {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.btn-book {
+  background-color: white;
+  color: #1E3E82;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 15px;
+  float: right;
+}
+
+.col-8 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 
 
 /* FOOTER      */
-.footer
-{
+.footer {
   background: var(--primaryColor);
 }
 
 /* === RESPONSIVE TWEAKS === */
-@media (max-width: 991px) { /* Tablets */
+@media (max-width: 991px) {
+
+  /* Tablets */
   .bus {
     height: auto;
     padding: 25px;
   }
+
   .card {
     margin-top: 20px;
   }
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
   .bus {
     padding: 20px;
     height: auto;
   }
 
   .fw-bold.fs-4 {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 
   .card {
@@ -231,7 +294,7 @@ body {
   }
 
   .btn-lg {
-    width: 100%; 
+    width: 100%;
     font-size: 1rem;
   }
 

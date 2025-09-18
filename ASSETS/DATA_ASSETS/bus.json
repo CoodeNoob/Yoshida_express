@@ -1,14 +1,16 @@
 {
   "1": {
+    "BusId": "1",
     "BusName": "Apex Route",
     "BusType": "Luxury",
-    "TotalSeat": 20,
-    "AvailableSeats": 20,
+    "TotalSeat": 30,
+    "AvailableSeats": 30,
     "UnitSeatPrice": 20000,
     "Route": { "From": "Yangon", "To": "Mandalay" },
     "DepartureTime": ""
   },
   "2": {
+    "BusId": "2",
     "BusName": "Pre Router",
     "BusType": "Economy",
     "TotalSeat": 20,
@@ -18,6 +20,7 @@
     "DepartureTime": ""
   },
   "3": {
+    "BusId": "3",
     "BusName": "Golden Express",
     "BusType": "Premium",
     "TotalSeat": 30,
@@ -27,6 +30,7 @@
     "DepartureTime": ""
   },
   "4": {
+    "BusId": "4",
     "BusName": "Royal Coach",
     "BusType": "VIP",
     "TotalSeat": 25,
@@ -36,6 +40,7 @@
     "DepartureTime": ""
   },
   "5": {
+    "BusId": "5",
     "BusName": "Silver Line",
     "BusType": "Express",
     "TotalSeat": 40,
@@ -45,6 +50,7 @@
     "DepartureTime": ""
   },
   "6": {
+    "BusId": "6",
     "BusName": "Sunrise Travels",
     "BusType": "Sleeper",
     "TotalSeat": 35,
@@ -54,6 +60,7 @@
     "DepartureTime": ""
   },
   "7": {
+    "BusId": "7",
     "BusName": "Royal Star",
     "BusType": "Deluxe",
     "TotalSeat": 28,
@@ -63,6 +70,7 @@
     "DepartureTime": ""
   },
   "8": {
+    "BusId": "8",
     "BusName": "Express King",
     "BusType": "Double-Decker",
     "TotalSeat": 50,
@@ -72,6 +80,7 @@
     "DepartureTime": ""
   },
   "9": {
+    "BusId": "9",
     "BusName": "Travel Swift",
     "BusType": "Mini Bus",
     "TotalSeat": 15,
@@ -81,6 +90,7 @@
     "DepartureTime": ""
   },  
   "10": {
+    "BusId": "10",
     "BusName": "Golden Horizon",
     "BusType": "Tourist Coach",
     "TotalSeat": 45,
