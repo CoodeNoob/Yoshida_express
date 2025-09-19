@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoshida Express - Booking History</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../ASSETS/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoshida Express - Booking History</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../ASSETS/style.css">
 </head>
+
 <body>
-<style>
-   body {
+  <style>
+    body {
       background-color: #f5f5f5;
     }
+
     .navbar {
       background-color: #1E3A8A;
     }
+
     .navbar a {
       color: #fff !important;
       font-weight: 500;
     }
+
     .page-title {
       margin: 30px 0;
       text-align: center;
@@ -26,134 +31,85 @@
       font-weight: bold;
       font-size: 28px;
     }
+
     .table thead {
       background-color: #1E3A8A;
       color: #fff;
     }
+
     .btn-custom {
       background-color: #1E3A8A;
       color: white;
     }
+
     .btn-custom:hover {
       background-color: #16336a;
       color: white;
     }
   </style>
-</head>
-<body>
+  </head>
 
-  <!-- Header / Navbar/ -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="#">YOSHIDA</a>
-      <div>
-        <ul class="navbar-nav ms-auto">
-             <!-- Home-->
-          <li class="nav-item"><a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z"/></svg></a></li>
-           <!-- Search -->
-          <li class="nav-item"><a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.48-5.34C15.07 5.59 12.53 3 9.5 3S3.93 5.59 3.93 8.39c0 2.8 2.54 5.39 5.57 5.39a6.471 6.471 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41L15.5 14zM9.5 13c-2.49 0-4.5-2.01-4.5-4.5S7.01 4 9.5 4s4.5 2.01 4.5 4.5S11.99 13 9.5 13z"/></svg></a></li>
-           <!-- Register-->
-          <li class="nav-item"><a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4S8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h9.5v-2c0-1.1.9-2 2-2h2.5v-2c0-2.66-5.33-4-8-4zm8 0v2h2v2h-2v2h-2v-2h-2v-2h2v-2h2z"/></svg></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <body>
+
+    <!-- Header NAV  -->
+    <div id="header_block"></div>
     <!-- Main Content -->
-  <div class="container wireframe-box mt-4 ">
-    <h2 class="wireframe-heading">Booking History</h2>
 
-    <!-- Search & Filter -->
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Search Booking ID / Route/ Bus Agent/ Bus Type">
-      </div>
-      <div class="col-md-3">
-        <select class="form-select">
-          <option>Filter by Date</option>
-          <option>Today</option>
-          <option>This Week</option>
-          <option>This Month</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <select class="form-select">
-          <option>Filter by Status</option>
-          <option>Booked</option>
-          <option>Completed</option>
-          <option>Cancelled</option>
-        </select>
-      </div>
+    <div class="container my-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-white p-2 rounded shadow-sm">
+          <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item" aria-current="page">Booking History</li>
+        </ol>
+      </nav>
     </div>
 
-    <!-- Booking Table -->
-     <div class="table-responsive">
-    <table class="table table-bordered table-hover align-middle">
-      <thead>
-        <tr>
-          <th>Booking ID</th>
-          <th>Route</th>
-          <th>Bus Agent</th>
-          <th>Bus Type</th>
-          <th>Date & Time</th>
-          <th>Seat(s)</th>
-          <th>Status</th>
-          <th>Fare</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>BKG1234</td>
-          <td>Yangon → Lashio</td>
-          <td>Swan Htet </td>
-          <td>Tesla</td>          
-          <td>20 Sep 2025, 8:30 AM</td>
-          <td>A1, A2</td>
-          <td><span class="badge bg-success">Booked</span></td>
-          <td>45000 Ks</td>
-          <td>
-            <button class="btn btn-sm btn-custom">View</button>
-            <button class="btn btn-sm btn-danger">Cancel</button>
-          </td>
-        </tr>
-        <tr>
-          <td>BKG1220</td>         
-          <td>Taunggyi → Yangon</td>
-          <td>Naw Ni</td>
-          <td>Scania</td>
-          <td>10 Sep 2025, 9:00 PM</td>
-          <td>B4</td>
-          <td><span class="badge bg-primary">Completed</span></td>
-          <td>45000 Ks</td>
-          <td><button class="btn btn-sm btn-custom">View</button></td>
-        </tr>
-        <tr>
-          <td>BKG1210</td>        
-          <td>Bago → Taungoo</td>
-          <td>Thoon</td>
-          <td>MAN</td>
-          <td>05 Sep 2025, 6:00 AM</td>
-          <td>C3</td>
-          <td><span class="badge bg-danger">Cancelled</span></td>
-          <td>35000 Ks</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>BKG1205</td>         
-          <td>Mandalay → Kalaw</td>
-          <td>Chit Phyoe Wai</td>
-          <td>Volvo</td>
-          <td>01 Sep 2025, 2:00 PM</td>
-          <td>D1, D2</td>
-          <td><span class="badge bg-primary">Completed</span></td>
-          <td>35000 Ks</td>
-          <td><button class="btn btn-sm btn-custom">View</button></td>
-      </tbody>
-    </table>
-  </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container wireframe-box mt-4 ">
+      <h2 class="wireframe-heading fw-bold">Booking History</h2>
 
-</body>
+      <!-- Search & Filter -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <input type="text" id="searchInput" class="form-control"
+            placeholder="Search Booking ID / Route/ Bus Agent/ Bus Type">
+        </div>
+        <div class="col-md-3">
+          <select class="form-select" id="sortSelect">
+            <option value="seat">Sort by number of seat booked</option>
+            <option value="price">Sort by Total Price</option>
+            <option value="date">Sort by book date</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Booking Table -->
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+          <thead>
+            <tr class="">
+              <th class="">Booked Name</th>
+              <th>Bus Name</th>
+              <th>Trip</th>
+              <th>Booked Date & Time</th>
+              <th>Total booked Seat</th>
+              <th>Total</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+          <tbody id="history-table">
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="footer_block"></div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- HEADER AND FOOTER LOADING  -->
+      <script src="../LAYOUTS/layoutLoading.js"></script>
+      <!-- DATA PULL OF CHECKOUT HISTORY  -->
+      <script src="../ASSETS/infra_js/checkoutHistory.js"></script>
+
+  </body>
+
 </html>
