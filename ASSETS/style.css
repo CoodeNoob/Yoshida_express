@@ -1,3 +1,4 @@
+/* ================= GLOBAL RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -5,37 +6,62 @@
   user-select: none;
 }
 
-body {
-  position: relative;
-  height: 100vh;
-}
-
 :root {
-  /* --primaryColor: #1E3A8A; */
-  --primaryColor: #122C4F;
-  --fontColor: #FFFF;
-  --hoverColor: rgba(19, 64, 154, 0.987);
+  --primaryColor: #0C2948;
+  --fontColor: #FFFFFF;
+  --hoverColor: #325675;
+  --goldColor: #EDAB18;
 }
 
-
-/* LOGIN  */
-.kpt {
-  width: 400px;
-  height: 400px;
-  background: var(--primaryColor);
+/* Make body + page layout flexible */
+html, body {
+  height: 100%;
 }
 
-
-/* HOME PAGE  */
-.hero {
-  background-color: #123c8d;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: var(--primaryColor);
   color: white;
+}
+
+/* Main content grows, pushes footer down */
+main {
+  flex: 1;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: var(--goldColor);
+
+}
+
+.navbar a {
+  color: var(--primaryColor) !important;
+  font-weight: 500;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+
+/* ================= HERO / HOME ================= */
+.hero {
+  background-color: var(--primaryColor);
+  color: var(--fontColor);
   padding: 60px 20px;
+  text-align: center;
 }
 
 .welcome-icon {
   font-size: 50px;
-  color: #FBc02D;
+  color: #FFEA00;
   border: 2px solid black;
   border-radius: 50%;
   padding: 10px;
@@ -58,53 +84,20 @@ body {
   height: 60px;
   object-fit: contain;
   margin: 5px;
-}
-
-/*Log In*/
-
-
-
-
-/* BUUS */
-/* === GLOBAL STRUCTURE === */
-#footer_block {
-  position: fixed;
-  width: 100vw;
-  bottom: 0;
-}
-
-/* === NAVBAR === */
-.navbar {
-  background: var(--primaryColor);
-}
-
-.navbar-brand fw-bold {
-  margin: 5px;
-}
-
-/* logo photo */
-.logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  /* keeps proportions */
-  border-radius: 30px;
+  
 }
 
 
-/* === BUS CONTAINER === */
+/* ================= BUS ================= */
 .bus {
   padding: 40px;
-  background: #f8f9fa;
-  /* light gray */
+  background: var(--fontColor);
   border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
 
 .seat-container {
   display: flex;
@@ -113,67 +106,55 @@ body {
   gap: 10px;
 }
 
-
 .seat {
   width: 70px;
   height: 70px;
-  background: #e9ecef;
+  background: var(--fontColor);
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   color: #495057;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
 
-
 .seat:hover {
-  background: #dee2e6;
   transform: scale(1.05);
 }
 
-.seat.ocupied {
-  background: #198754 !important;
-  /* green */
+.seat.occupied {
+  background: red !important;
   color: white;
-  box-shadow: 0 0 10px rgba(25, 135, 84, 0.6);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
 }
-
 
 .aisle {
   width: 30px;
-}
-
-.seat.ocupied {
-  background: red;
 }
 
 .selected_description {
   margin-top: 20px;
   padding: 20px;
   border-radius: 12px;
-  background: #ffffff;
+  background: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 280px;
   text-align: center;
 }
 
-
 .selected_description h3 {
-  margin: 0 0 10px 0;
-  color: #333;
+  margin-bottom: 10px;
+  color: white;
 }
-
 
 .selected_description ul {
   list-style: none;
   padding: 0;
 }
-
 
 .selected_description li {
   margin: 6px 0;
@@ -186,7 +167,7 @@ body {
 
 .selected_description button {
   margin-top: 12px;
-  background: #0d6efd;
+  background: var(--hoverColor);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -196,23 +177,10 @@ body {
 }
 
 .selected_description button:hover {
-  background: #0b5ed7;
-}
-
-
-.btn-background {
   background: var(--primaryColor);
 }
 
-.continue-btn:hover {
-  background: var(--hoverColor);
-}
-
-/* ---  */
-
-/*================== CheckOut========================*/
-
-/* Progress Bar */
+/* ================= CHECKOUT ================= */
 .progressbar {
   display: flex;
   justify-content: space-between;
@@ -266,7 +234,6 @@ body {
   background: var(--primaryColor);
 }
 
-/* Forms container */
 .checkout-form {
   max-width: 500px;
   margin: auto;
@@ -297,10 +264,10 @@ body {
   justify-content: center;
   min-height: 120px;
   text-align: center;
-  transition: all 0.3s;
   padding: 20px 10px;
   background: #f8f9fa;
   border-radius: 10px;
+  transition: all 0.3s;
 }
 
 .payment-card:hover {
@@ -309,7 +276,7 @@ body {
 }
 
 .payment-card.selected {
-  border: 2px solid #0d6efd;
+  border: 2px solid var(--hoverColor);
   background-color: #e7f1ff;
 }
 
@@ -317,20 +284,17 @@ body {
   cursor: pointer;
 }
 
-/* Receipt Voucher Styling */
+/* Receipt Voucher */
 .receipt-voucher {
   max-width: 400px;
   background: #fff;
   border: 1px dashed #bbb;
   border-radius: 15px;
-  position: relative;
-  font-family: "Segoe UI", sans-serif;
   padding: 25px;
   margin: 20px auto;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* New CSS for centered titles and better receipt layout */
-.checkout-form h4,
 .receipt-voucher h4 {
   text-align: center;
 }
@@ -345,11 +309,7 @@ body {
   border-bottom: none;
 }
 
-.receipt-voucher .voucher-content strong {
-  color: #555;
-}
-
-/* Fix: prevent receipt from showing before payment */
+/* Hide receipt initially */
 #receiptBox {
   display: none;
   opacity: 0;
@@ -363,9 +323,7 @@ body {
   transform: translateY(0);
 }
 
-/* ==================================================================== */
-/* BusRoutes */
-
+/* ================= BUS ROUTES ================= */
 .header-section {
   background-color: var(--primaryColor);
   color: var(--fontColor);
@@ -373,7 +331,6 @@ body {
   padding: 50px 20px;
 }
 
-/* Rectangle Search Box */
 .search-box {
   background: var(--fontColor);
   border-radius: 10px;
@@ -404,12 +361,6 @@ body {
   margin: 15px 0;
 }
 
-.bus-card svg {
-  width: 100%;
-  height: 80px;
-  border-radius: 5px;
-}
-
 .btn-book {
   background-color: var(--fontColor);
   color: var(--primaryColor);
@@ -419,35 +370,21 @@ body {
   float: right;
 }
 
-.col-8 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-
-
-/* LOADER  swan htet (18th Sept 2025)*/
-/* bus container */
-/* bus sits above the road */
+/* ================= LOADER ================= */
 .loader-container {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  /* so it stays on top while scrolling */
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4);
-  /* semi-transparent dark overlay */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  /* make sure it is above all content */
 }
 
 .bus_loader {
-  z-index: 2;
   background: var(--primaryColor);
   padding: 20px;
   border-radius: 50%;
@@ -456,36 +393,31 @@ body {
 
 .bus_loader svg {
   width: 74px;
-  height: auto;
   display: block;
-  transform: translateY(2px);
 }
 
 @keyframes bounce {
   0% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
-
   100% {
-    transform: translateX(-50%) translateY(-4px);
+    transform: translateY(-4px);
   }
 }
 
-
-/* FOOTER      */
-.footer {
-  background: var(--primaryColor);
+/* ================= FOOTER ================= */
+footer, #footer_block {
+  background: var(--goldColor);
+  color: var(--primaryColor);
+  text-align: center;
+  padding: 15px;
 }
 
-/* === RESPONSIVE TWEAKS === */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 991px) {
-
-  /* Tablets */
   .bus {
-    height: auto;
     padding: 25px;
   }
-
   .card {
     margin-top: 20px;
   }
@@ -494,28 +426,39 @@ body {
 @media (max-width: 767px) {
   .bus {
     padding: 20px;
-    height: auto;
   }
-
   .fw-bold.fs-4 {
     font-size: 1.2rem;
   }
-
-  .card {
-    padding: 20px;
-  }
-
   .btn-lg {
     width: 100%;
     font-size: 1rem;
   }
-
   footer p {
     font-size: 0.85rem;
   }
-
   footer a {
     display: block;
     margin: 5px 0;
   }
 }
+
+/* ================= ABOUT US ================= */
+.about-section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.about-img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
