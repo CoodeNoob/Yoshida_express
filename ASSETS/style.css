@@ -319,11 +319,15 @@ body {
 /* Receipt Voucher Styling */
 
 .receipt-voucher {
-    border: 1px solid #ccc; /* Makes the border 1px solid grey */
-    /* Add any other existing styles for receipt-voucher here */
-    padding: 20px; /* Example padding */
-    background-color: #fff; /* Example background */
-    border-radius: 8px; /* Example rounded corners */
+  border: 1px solid #ccc;
+  /* Makes the border 1px solid grey */
+  /* Add any other existing styles for receipt-voucher here */
+  padding: 20px;
+  /* Example padding */
+  background-color: #fff;
+  /* Example background */
+  border-radius: 8px;
+  /* Example rounded corners */
 }
 
 /* New CSS for centered titles and better receipt layout */
@@ -473,6 +477,35 @@ body {
 .footer {
   background: var(--primaryColor);
 }
+
+
+/* Bread Crumb  */
+.breadcrumb {
+  background-color: #f8f9fa;
+  /* light gray */
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+}
+
+.breadcrumb a {
+  color: #000000;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover {
+  color: var(--primaryColor);
+  text-decoration: underline;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: ">";
+  color: #6c757d;
+  padding: 0 0.5rem;
+}
+
+
+
+
 
 /* === RESPONSIVE TWEAKS === */
 @media (max-width: 991px) {
