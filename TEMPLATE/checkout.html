@@ -2,282 +2,199 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <link rel="stylesheet" href="../ASSETS/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../ASSETS/style.css" />
 </head>
 
 <body class="bg-light">
 
-  <!-- Header NAV  -->
     <div id="header_block"></div>
 
-
-  <div class="progressbar container">
-    <div class="progress-step active">
-      <div class="circle">1</div>
-      <p class="mt-2">Fill Information</p>
+    <div class="progressbar container">
+        <div class="progress-step active">
+            <div class="circle">1</div>
+            <p class="mt-2">Fill Information</p>
+        </div>
+        <div class="progress-step">
+            <div class="circle">2</div>
+            <p class="mt-2">Confirm Payment</p>
+        </div>
+        <div class="progress-step">
+            <div class="circle">3</div>
+            <p class="mt-2">Receipt</p>
+        </div>
     </div>
-    <div class="progress-step">
-      <div class="circle">2</div>
-      <p class="mt-2">Confirm Payment</p>
+
+    <div class="container my-4">
+        <div class="checkout-form p-1 rounded shadow-sm">
+            <form id="form1" class="active p-4 shadow-sm rounded bg-light">
+                <h4 class="mb-4 fw-bold">Please Fill Your Information</h4>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Name</label>
+                    <input type="text" class="form-control p-2" id="nameInput" placeholder="" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Phone Number</label>
+                    <input type="tel" class="form-control p-2" id="phoneInput" placeholder="" required />
+                </div>
+
+                <div class="d-flex justify-content-end mt-4">
+                    <button type="button" style="background-color: var(--primaryColor); color: #eee"
+                        class="btn px-4 rounded-1" onclick="nextStep(1)">
+                        Next <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </form>
+
+            <form id="form2" class="p-4 shadow-sm rounded bg-light">
+                <h4 class="mb-4 fw-bold">Choose Payment Method</h4>
+
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <div class="payment-card border rounded p-3 text-center cursor-pointer"
+                            onclick="selectPayment(this,'kbz')">
+                            <img src="../ASSETS/imgs/kpay.png" alt="KBZPay" class="mb-2"
+                                style="width: 70px; height: 50px; border-radius: 50%" />
+                            <h6 class="fw-semibold">KBZPay</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="payment-card border rounded p-3 text-center cursor-pointer"
+                            onclick="selectPayment(this,'wave')">
+                            <img src="../ASSETS/imgs/wave.png" alt="WavePay" class="mb-2"
+                                style="width: 70px; height: 50px; border-radius: 50%" />
+                            <h6 class="fw-semibold">WavePay</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="payment-card border rounded p-3 text-center cursor-pointer"
+                            onclick="selectPayment(this,'aya')">
+                            <img src="../ASSETS/imgs/a.png" alt="AYAPay" class="mb-2"
+                                style="width: 70px; height: 50px; border-radius: 50%" />
+                            <h6 class="fw-semibold">APay</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="payment-card border rounded p-3 text-center cursor-pointer"
+                            onclick="selectPayment(this,'cash')">
+                            <img src="../ASSETS//imgs/cash.png" alt="cash"
+                                style="width: 70px; height: 50px; border-radius: 50%" />
+                            <h6 class="fw-semibold">Cash</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep(2)">
+                        Back
+                    </button>
+                    <button type="button" class="btn" style="background-color: var(--primaryColor); color: #eee"
+                        id="confirmBtn" disabled onclick="confirmPayment()">
+                        Confirm
+                    </button>
+                </div>
+            </form>
+
+            <div class="receipt-voucher p-4 rounded" id="receiptBox">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="fw-bold mb-0">Ticket Receipt</h4>
+                    <span class="badge bg-success">Paid</span>
+                </div>
+
+                <div class="voucher-content">
+                    <div class="row mb-2">
+                        <div class="col-12 text-center">
+                            <p class="mb-1"><strong>Bus:</strong> <span id="receiptBusName"></span></p>
+                            <p class="mb-1"><strong>Date:</strong> <span id="receiptDate"></span></p>
+                            <p class="mb-1"><strong>Time:</strong> <span id="receiptTime"></span></p>
+                        </div>
+                    </div>
+                    <hr class="dashed" />
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <strong>From:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span id="receiptFrom"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <strong>To:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span id="receiptTo"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <strong>Passenger:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span id="receiptName"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <strong>Phone:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span id="receiptPhone"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <strong>Seat:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span id="receiptSeats"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <strong>Payment Method:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span id="receiptPaymentMethod"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <strong>Total Price:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            MMK <span id="receiptGrandPrice"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="dashed" />
+
+                <div class="text-center mt-3">
+                    <h5 class="text-success mb-0">
+                        Enjoy your Ride! <br />
+                        <big>Thank You</big>
+                    </h5>
+                    <button type="button" class="btn btn-primary mt-3" onclick="goToHome()">
+                        <i class="fas fa-home me-2"></i>Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="progress-step">
-      <div class="circle">3</div>
-      <p class="mt-2">Receipt</p>
-    </div>
-  </div>
 
-  <div class="container my-4">
-    <div class="checkout-form p-1 rounded shadow-sm">
-      <form id="form1" class="active p-4 shadow-sm rounded bg-light">
-        <h4 class="mb-4 fw-bold">Please Fill Your Information</h4>
-
-        <div class="mb-3">
-          <label class="form-label fw-semibold">Name</label>
-          <input type="text" class="form-control p-2" id="nameInput" placeholder=""
-            required />
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label fw-semibold">Phone Number</label>
-          <input type="tel" class="form-control p-2" id="phoneInput" placeholder=""
-            required />
-        </div>
-
-        <!-- <div class="row g-3">
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Gender</label>
-            <select class="form-select rounded-pill" id="genderInput" required>
-              <option value="">Select...</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Age</label>
-            <input type="number" class="form-control rounded-pill" id="ageInput" placeholder="Enter your age"
-              required />
-          </div>
-        </div> -->
-
-        <div class="d-flex justify-content-end mt-4">
-          <button type="button" style="background-color: var(--primaryColor); color: #eee" class="btn px-4 rounded-1"
-            onclick="nextStep(1)">
-            Next <i class="fas fa-arrow-right ms-2"></i>
-          </button>
-        </div>
-      </form>
-
-      <form id="form2" class="p-4 shadow-sm rounded bg-light">
-        <h4 class="mb-4 fw-bold">Choose Payment Method</h4>
-
-        <div class="row g-3">
-          <div class="col-md-3">
-            <div class="payment-card border rounded p-3 text-center cursor-pointer" onclick="selectPayment(this,'kbz')">
-              <img src="../ASSETS/imgs/kpay.png" alt="KBZPay" class="mb-2"
-                style="width: 70px; height: 50px; border-radius: 50%" />
-              <h6 class="fw-semibold">KBZPay</h6>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="payment-card border rounded p-3 text-center cursor-pointer"
-              onclick="selectPayment(this,'wave')">
-              <img src="../ASSETS/imgs/wave.png" alt="WavePay" class="mb-2"
-                style="width: 70px; height: 50px; border-radius: 50%" />
-              <h6 class="fw-semibold">WavePay</h6>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="payment-card border rounded p-3 text-center cursor-pointer" onclick="selectPayment(this,'aya')">
-              <img src="../ASSETS/imgs/a.png" alt="AYAPay" class="mb-2"
-                style="width: 70px; height: 50px; border-radius: 50%" />
-              <h6 class="fw-semibold">APay</h6>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="payment-card border rounded p-3 text-center cursor-pointer"
-              onclick="selectPayment(this,'cash')">
-              <img src="../ASSETS//imgs/cash.png" alt="cash" style="width: 70px; height: 50px; border-radius: 50%" />
-              <h6 class="fw-semibold">Cash</h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex justify-content-between mt-4">
-          <button type="button" class="btn btn-secondary" onclick="prevStep(2)">
-            Back
-          </button>
-          <button type="button" class="btn" style="background-color: var(--primaryColor); color: #eee" id="confirmBtn"
-            disabled onclick="confirmPayment()">
-            Confirm
-          </button>
-        </div>
-      </form>
-
-      <div class="receipt-voucher p-4 rounded" id="receiptBox">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h4 class="fw-bold mb-0">Ticket Receipt</h4>
-          <span class="badge bg-success">Paid</span>
-        </div>
-
-        <div class="voucher-content">
-          <div class="row mb-2">
-            <div class="col-12 text-center">
-              <p class="mb-1"><strong>Bus:</strong> Yangon ➝ Mandalay</p>
-              <p class="mb-1"><strong>Date:</strong> 17 Sep 2025</p>
-            </div>
-          </div>
-          <hr class="dashed" />
-          <div class="row mb-2">
-            <div class="col-6">
-              <strong>Passenger:</strong>
-            </div>
-            <div class="col-6 text-end">
-              <span id="receiptName"></span>
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-6">
-              <strong>Phone:</strong>
-            </div>
-            <div class="col-6 text-end">
-              <span id="receiptPhone"></span>
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-6">
-              <strong>Seat:</strong>
-            </div>
-            <div class="col-6 text-end">A1</div>
-          </div>
-        </div>
-
-        <hr class="dashed" />
-
-        <div class="text-center mt-3">
-          <h5 class="text-success mb-0">
-            Enjoy your Ride! <br />
-            <big>Thank You</big>
-          </h5>
-          <button type="button" class="btn btn-primary mt-3" onclick="goToHome()">
-            <i class="fas fa-home me-2"></i>Back to Home
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </div>
-  </div>
-
-  <div id="footer_block"></div>
+    <div id="footer_block"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- HEADER AND FOOTER LOADING  -->
     <script src="../LAYOUTS/layoutLoading.js"></script>
-
-  <script>
-    let selectedPayment = null;
-
-    function selectPayment(card, type) {
-      document
-        .querySelectorAll(".payment-card")
-        .forEach((c) => c.classList.remove("selected"));
-      card.classList.add("selected");
-      selectedPayment = type;
-      document.getElementById("confirmBtn").disabled = false;
-    }
-
-    function validatePassengerInfo() {
-      const name = document.getElementById("nameInput").value;
-      const phone = document.getElementById("phoneInput").value;
-    
-
-      if (name === "" || phone === "") {
-        alert("⚠️ Please fill in all passenger information fields!");
-        return false;
-      }
-      return { name, phone};
-    }
-
-    function confirmPayment() {
-      if (!selectedPayment) {
-        alert("⚠️ Please select a payment method before confirming!");
-        return;
-      }
-
-      const passengerData = validatePassengerInfo();
-      if (!passengerData) {
-        // This case should not be reached if validation is done on prev step,
-        // but it's a good fallback.
-        return;
-      }
-
-      // Hide payment form and show receipt
-      document.getElementById("form2").classList.remove("active");
-      const receipt = document.getElementById("receiptBox");
-      setTimeout(() => receipt.classList.add("active"), 200);
-
-      // Update progress bar
-      document.querySelectorAll(".progress-step")[2].classList.add("active");
-
-      // Update receipt details with collected info
-      document.getElementById("receiptName").textContent = passengerData.name;
-      document.getElementById("receiptPhone").textContent =
-        passengerData.phone;
-
-      console.log("Payment method selected:", selectedPayment);
-      console.log("Passenger info:", passengerData);
-    }
-
-    function nextStep(step) {
-      if (step === 1) {
-        const passengerData = validatePassengerInfo();
-        if (!passengerData) {
-          return;
-        }
-
-        // Move from Passenger Info to Payment Form
-        document.getElementById("form1").classList.remove("active");
-        setTimeout(
-          () => document.getElementById("form2").classList.add("active"),
-          200
-        );
-
-        // Update progress bar
-        document
-          .querySelectorAll(".progress-step")[1]
-          .classList.add("active");
-      }
-    }
-
-    function prevStep(step) {
-      if (step === 2) {
-        document.getElementById("form2").classList.remove("active");
-        setTimeout(
-          () => document.getElementById("form1").classList.add("active"),
-          200
-        );
-
-        document
-          .querySelectorAll(".progress-step")[1]
-          .classList.remove("active");
-      }
-    }
-
-    // New function to redirect to the home page
-    function goToHome() {
-      window.location.href = "../index.html";
-    }
-  </script>
+    <script src="../ASSETS/infra_js/checkout.js"></script>
 </body>
 
 </html>
