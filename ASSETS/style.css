@@ -17,18 +17,9 @@ body {
   --hoverColor: rgba(19, 64, 154, 0.987);
 }
 
-
-/* LOGIN  */
-.kpt {
-  width: 400px;
-  height: 400px;
-  background: var(--primaryColor);
-}
-
-
 /* HOME PAGE  */
 .hero {
-  background-color: #123c8d;
+  background-color: var(--primaryColor);
   color: white;
   padding: 60px 20px;
 }
@@ -60,17 +51,11 @@ body {
   margin: 5px;
 }
 
-/*Log In*/
-
-
-
-
 /* BUUS */
 /* === GLOBAL STRUCTURE === */
 #footer_block {
-  position: fixed;
-  width: 100vw;
-  bottom: 0;
+  margin-top: 200px;
+  /* width: 100vw; */
 }
 
 /* === NAVBAR === */
@@ -503,6 +488,24 @@ body {
   color: #6c757d;
   padding: 0 0.5rem;
 }
+/* ================= ABOUT US ================= */
+.about-section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.about-img {
+  border-radius: 10px;
+  overflow: hidden;
+}
 
 
 
@@ -549,4 +552,46 @@ body {
     display: block;
     margin: 5px 0;
   }
+  
+/* Popular Routes Section */
+.popular-routes .row {
+  align-items: stretch; /* ensures all cards in the row have equal height */
+}
+
+/* Cards layout */
+.popular-routes .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Route images */
+.popular-routes .route-img {
+  width: 100%;
+  height: 200px;        /* fixed height for all images */
+  object-fit: cover;    /* crop image instead of stretching */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect */
+.popular-routes .route-img:hover {
+  transform: scale(1.05);
+}
+
+/* Card body to fill remaining space */
+.popular-routes .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;      /* vertical centering of text */
+  justify-content: center;  /* horizontal centering */
+  padding: 1rem;
+}
+
+
+
 }

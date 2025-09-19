@@ -33,8 +33,8 @@
     "BusId": "4",
     "BusName": "Royal Coach",
     "BusType": "VIP",
-    "TotalSeat": 25,
-    "AvailableSeats": 25,
+    "TotalSeat": 26,
+    "AvailableSeats": 26,
     "UnitSeatPrice": 25000,
     "Route": { "From": "Mandalay", "To": "Bagan" },
     "DepartureTime": ""
@@ -53,8 +53,8 @@
     "BusId": "6",
     "BusName": "Sunrise Travels",
     "BusType": "Sleeper",
-    "TotalSeat": 35,
-    "AvailableSeats": 35,
+    "TotalSeat": 34,
+    "AvailableSeats": 34,
     "UnitSeatPrice": 22000,
     "Route": { "From": "Yangon", "To": "Myeik" },
     "DepartureTime": ""
@@ -83,20 +83,100 @@
     "BusId": "9",
     "BusName": "Travel Swift",
     "BusType": "Mini Bus",
-    "TotalSeat": 15,
-    "AvailableSeats": 15,
+    "TotalSeat": 16,
+    "AvailableSeats": 16,
     "UnitSeatPrice": 8000,
     "Route": { "From": "Yangon", "To": "Hpa-An" },
     "DepartureTime": ""
-  },  
+  },
   "10": {
     "BusId": "10",
     "BusName": "Golden Horizon",
     "BusType": "Tourist Coach",
-    "TotalSeat": 45,
-    "AvailableSeats": 45,
+    "TotalSeat": 46,
+    "AvailableSeats": 46,
     "UnitSeatPrice": 25000,
     "Route": { "From": "Yangon", "To": "Ngapali" },
     "DepartureTime": ""
-  }
+  },
+  "11": {
+    "BusId": "11",
+    "BusName": "Golden Horizon",
+    "BusType": "Dream Bus",
+    "TotalSeat": 30,
+    "AvailableSeats": 30,
+    "UnitSeatPrice": 28000,
+    "Route": { "From": "Yangon", "To": "Mandalay" },
+    "DepartureTime": ""
+  },
+  "12": {
+    "BusId": "12",
+    "BusName": "Express King",
+    "BusType": "First Class",
+    "TotalSeat": 24,
+    "AvailableSeats": 24,
+    "UnitSeatPrice": 30000,
+    "Route": { "From": "Yangon", "To": "Mandalay" },
+    "DepartureTime": ""
+  },
+    "13": {
+    "BusId": "13",
+    "BusName": "Pre Router",
+    "BusType": "First Class",
+    "TotalSeat": 26,
+    "AvailableSeats": 26,
+    "UnitSeatPrice": 22000,
+    "Route": { "From": "Yangon", "To": "Naypyidaw" },
+    "DepartureTime": ""
+  },
+  "14": {
+    "BusId": "14",
+    "BusName": "ကိုကောင်းပြည့် နှင့် အဖွဲ့",
+    "BusType": "VIP",
+    "TotalSeat": 24,
+    "AvailableSeats": 24,
+    "UnitSeatPrice": 32000,
+    "Route": { "From": "Yangon", "To": "Mandalay" },
+    "DepartureTime": ""
+  },
+  "15": {
+    "BusId": "15",
+    "BusName": "Sunrise Travels",
+    "BusType": "Dream Bus",
+    "TotalSeat": 32,
+    "AvailableSeats": 32,
+    "UnitSeatPrice": 42000,
+    "Route": { "From": "Yangon", "To": "Naypyidaw" },
+    "DepartureTime": ""
+  },
+  "16": {
+    "BusId": "16",
+    "BusName": "Silver Line",
+    "BusType": "Dream Bus",
+    "TotalSeat": 26,
+    "AvailableSeats": 26,
+    "UnitSeatPrice": 28000,
+    "Route": { "From": "Yangon", "To": "Bagan" },
+    "DepartureTime": ""
+  },
+  "17": {
+    "BusId": "17",
+    "BusName": "Silver Line",
+    "BusType": "First Class",
+    "TotalSeat": 24,
+    "AvailableSeats": 24,
+    "UnitSeatPrice": 28000,
+    "Route": { "From": "Mandalay", "To": "Bagan" },
+    "DepartureTime": ""
+  },
+  "18": {
+    "BusId": "18",
+    "BusName": "Sunrise Travels",
+    "BusType": "First Class",
+    "TotalSeat": 24,
+    "AvailableSeats": 24,
+    "UnitSeatPrice": 29000,
+    "Route": { "From": "Mandalay", "To": "Bagan" },
+    "DepartureTime": ""
+}
 }
