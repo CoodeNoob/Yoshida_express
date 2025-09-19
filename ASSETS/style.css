@@ -405,6 +405,7 @@ main {
   }
 }
 
+
 /* ================= FOOTER ================= */
 footer, #footer_block {
   background: var(--goldColor);
@@ -412,6 +413,35 @@ footer, #footer_block {
   text-align: center;
   padding: 15px;
 }
+
+
+/* Bread Crumb  */
+.breadcrumb {
+  background-color: #f8f9fa;
+  /* light gray */
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+}
+
+.breadcrumb a {
+  color: #000000;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover {
+  color: var(--primaryColor);
+  text-decoration: underline;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: ">";
+  color: #6c757d;
+  padding: 0 0.5rem;
+}
+
+
+
+
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 991px) {
