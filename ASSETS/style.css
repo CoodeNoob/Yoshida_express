@@ -17,18 +17,9 @@ body {
   --hoverColor: rgba(19, 64, 154, 0.987);
 }
 
-
-/* LOGIN  */
-.kpt {
-  width: 400px;
-  height: 400px;
-  background: var(--primaryColor);
-}
-
-
 /* HOME PAGE  */
 .hero {
-  background-color: #123c8d;
+  background-color: var(--primaryColor);
   color: white;
   padding: 60px 20px;
 }
@@ -60,16 +51,11 @@ body {
   margin: 5px;
 }
 
-/*Log In*/
-
-
-
-
 /* BUUS */
 /* === GLOBAL STRUCTURE === */
 #footer_block {
-  margin-top: 50px;
-  width: 100vw;
+  margin-top: 200px;
+  /* width: 100vw; */
 }
 
 /* === NAVBAR === */
@@ -501,6 +487,24 @@ body {
   content: ">";
   color: #6c757d;
   padding: 0 0.5rem;
+}
+/* ================= ABOUT US ================= */
+.about-section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.about-img {
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 
