@@ -32,17 +32,20 @@ function formatDateTime(date) {
     return `${year}-${month}-${day}, ${hours}:${minutes} ${ampm}`;
 }
 
-// DataStoring For Bus
-fetch("../ASSETS/DATA_ASSETS/bus.json")
-    .then(response => response.json())
-    .then(buses => {
-        Object.keys(buses).forEach(key => {
-            let times = generateTimes(7); 
-            buses[key].DepartureTime = times.DepartureTime;
-        });
-        localStorage.setItem("Buses", JSON.stringify(buses));
-    })
-    .catch(err => console.error("Error loading bus.json:", err));
+
+if (!localStorage.getItem("Buses")) {
+    // DataStoring For Bus
+    fetch("../ASSETS/DATA_ASSETS/bus.json")
+        .then(response => response.json())
+        .then(buses => {
+            Object.keys(buses).forEach(key => {
+                let times = generateTimes(7);
+                buses[key].DepartureTime = times.DepartureTime;
+            });
+            localStorage.setItem("Buses", JSON.stringify(buses));
+        })
+        .catch(err => console.error("Error loading bus.json:", err));
+}
 
 // DataStoring For Location
 fetch("../ASSETS/DATA_ASSETS/locations.json")

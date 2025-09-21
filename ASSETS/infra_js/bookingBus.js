@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("fromLocation").textContent = reservedBus.Route.From;
         document.getElementById("toLocation").textContent = reservedBus.Route.To;
-
         document.getElementById("seatPrice").textContent = reservedBus.UnitSeatPrice;
 
 
@@ -26,13 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
         //get the total seats
         let seatTotal = reservedBus.TotalSeat;
 
+    
+        let ocupiedSeat = reservedBus.OcupiedSeat || [] ;
+        console.log(ocupiedSeat);
         let seatNumber = 1;
         let BusCode = reservedBus.BusName.split(" ")[0];
 
         for (let row = 0; row < seatTotal / 4; row++) {
             const rowDiv = document.createElement("div");
             rowDiv.classList.add("seat-container");
-
 
             //left seats
             for (let i = 0; i < 2; i++) {
@@ -41,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 seat.classList.add("seat");
                 seat.setAttribute("data-seat-id", seatId);
                 seat.innerHTML = `<p>${seatNumber}</p>`;
+
+                // Check if seat is already occupied
+                if (ocupiedSeat.includes(seatId)) seat.classList.add("disable");
                 rowDiv.appendChild(seat);
                 seatNumber++;
             }
@@ -57,6 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 seat.classList.add("seat");
                 seat.setAttribute("data-seat-id", seatId);
                 seat.innerHTML = `<p>${seatNumber}</p>`;
+
+                if (ocupiedSeat.includes(seatId)) seat.classList.add("disable");
                 rowDiv.appendChild(seat);
                 seatNumber++;
             }
@@ -145,7 +151,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    document.getElementById("goBackSearch").addEventListener("click",()=>{window.history.back();})
 
 });
+
 
 
