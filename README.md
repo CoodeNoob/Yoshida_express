@@ -17,7 +17,13 @@ It is built with **HTML, CSS, JavaScript, LocalStorage, and Bootstrap** to provi
 ![LocalStorage](https://img.shields.io/badge/LocalStorage-FF6F00?style=for-the-badge&logo=windowsterminal&logoColor=white)
 
 ## Features of the system
+- Search the Buses 
+- Book the seat
+- Make payment
+- View Booked History
+## Site map of the system
 
+![Alt text](./ASSETS/imgs/Screenshot%20from%202025-09-22%2000-06-44.png)
 
 ## How to Run
 1. Clone this repository:
