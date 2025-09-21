@@ -34,7 +34,7 @@
         <select class="form-select w-auto" aria-label="Default select example" id="toLocation" name="toLocation">
         </select>
 
-        <input type="date" class="form-control" name="date">
+        <input type="date" class="form-control" name="date" placeholder="select date">
         <button type="submit" class="button-search">SEARCH</button>
       </form>
 
@@ -235,15 +235,41 @@
 
   <script src="./ASSETS/infra_js/DataPulling.js"></script>
   <script>
-
     const form = document.getElementById("route-search-form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      // loader come 
+      // Get form fields
+      const from = document.getElementById("fromLocation");
+      const to = document.getElementById("toLocation");
+      const date = form.querySelector("input[name='date']");
+
+      let valid = true;
+
+      // Reset 
+      [from, to, date].forEach(el => el.style.border = "");
+
+      // Check 
+      if(!from.value || from.value === "From") {
+        from.style.border = "2px solid red";
+        valid = false;
+      }
+      if (!to.value || to.value === "To") {
+        to.style.border = "2px solid red";
+        valid = false;
+      }
+      if (!date.value) {
+        date.style.border = "2px solid red";
+        valid = false;
+      }
+
+      //
+      if (!valid) return;
+
+      // Show loader
       document.getElementById("loader-container").classList.remove("d-none");
 
-
+      // Prepare query string and redirect
       const actionUrl = form.getAttribute("action");
       const formData = new FormData(form);
       const queryString = new URLSearchParams(formData).toString();
@@ -254,6 +280,7 @@
       }, 500);
     });
   </script>
+
 </body>
 
 </html>

@@ -33,22 +33,25 @@ function formatDateTime(date) {
 }
 
 
-if (!localStorage.getItem("Buses")) {
-    // DataStoring For Bus
-    fetch("../DATA_ASSETS/bus.json")
-        .then(response => response.json())
-        .then(buses => {
-            Object.keys(buses).forEach(key => {
-                let times = generateTimes(7);
-                buses[key].DepartureTime = times.DepartureTime;
-            });
-            localStorage.setItem("Buses", JSON.stringify(buses));
-        })
-        .catch(err => console.error("Error loading bus.json:", err));
+
+if(!localStorage.getItem("Buses"))
+{
+// DataStoring For Bus
+fetch("../ASSETS/DATA_ASSETS/bus.json")
+    .then(response => response.json())
+    .then(buses => {
+        Object.keys(buses).forEach(key => {
+            let times = generateTimes(7); 
+            buses[key].DepartureTime = times.DepartureTime;
+        });
+        localStorage.setItem("Buses", JSON.stringify(buses));
+    })
+    .catch(err => console.error("Error loading bus.json:", err));
 }
 
+
 // DataStoring For Location
-fetch("../DATA_ASSETS/locations.json")
+fetch("../ASSETS/DATA_ASSETS/locations.json")
     .then(response => response.json())
     .then(loc => {
         Object.keys(loc).forEach(key => {
