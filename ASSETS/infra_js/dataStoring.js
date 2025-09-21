@@ -35,7 +35,7 @@ function formatDateTime(date) {
 
 if (!localStorage.getItem("Buses")) {
     // DataStoring For Bus
-    fetch("../ASSETS/DATA_ASSETS/bus.json")
+    fetch("../DATA_ASSETS/bus.json")
         .then(response => response.json())
         .then(buses => {
             Object.keys(buses).forEach(key => {
@@ -48,7 +48,7 @@ if (!localStorage.getItem("Buses")) {
 }
 
 // DataStoring For Location
-fetch("../ASSETS/DATA_ASSETS/locations.json")
+fetch("../DATA_ASSETS/locations.json")
     .then(response => response.json())
     .then(loc => {
         Object.keys(loc).forEach(key => {
