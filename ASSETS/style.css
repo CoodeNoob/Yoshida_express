@@ -8,34 +8,60 @@
 body {
   position: relative;
   height: 100vh;
+  scroll-behavior: smooth;
 }
 
 :root {
   /* --primaryColor: #1E3A8A; */
   --primaryColor: #122C4F;
   --fontColor: #FFFF;
-  --hoverColor: rgba(19, 64, 154, 0.987);
+  --hoverColor: #1c3f73;
+  --headFontColor: #EDAB18;
 }
 
 
-/* LOGIN  */
-.kpt {
-  width: 400px;
-  height: 400px;
-  background: var(--primaryColor);
+
+/** UTILITY **/
+.mt-80 {
+  margin-top: 80px;
+}
+
+.headFont {
+  color: var(--headFontColor);
 }
 
 
 /* HOME PAGE  */
 .hero {
-  background-color: #123c8d;
+  background-color: var(--primaryColor);
   color: white;
   padding: 60px 20px;
 }
 
+.button-search {
+  background: #122C4F;
+  /* primary */
+  color: var(--fontColor);
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.button-search:hover {
+  background: #1c3f73;
+  /* lighter navy */
+  transform: translateY(-2px);
+  /* subtle lift */
+}
+
+
+
 .welcome-icon {
   font-size: 50px;
-  color: #FBc02D;
+  color: #EDAB18;
   border: 2px solid black;
   border-radius: 50%;
   padding: 10px;
@@ -48,33 +74,80 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.feature-card,
+.bus-data {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.feature-card.show,
+.bus-data.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .feature-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-.payment-logos img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin: 5px;
+
+/* Common initial state */
+.route-card {
+  opacity: 0;
+  scale: 0;
+  transition: all 2s ease-in;
 }
 
-/*Log In*/
 
+.route-card.show {
+  opacity: 1;
+  scale: 1;
+  transition: all 0.6s ease;
+  transform-origin: center;
+}
+
+
+
+
+.payment-logos img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+/* BUS LOADING  */
+.busName {
+  color: var(--primaryColor);
+}
+
+.reserve-btn {
+  background: var(--primaryColor);
+}
+
+.reserve-btn:hover {
+  background: var(--hoverColor);
+}
 
 
 
 /* BUUS */
 /* === GLOBAL STRUCTURE === */
 #footer_block {
-  margin-top: 50px;
-
+  margin-top: 200px;
 }
 
 /* === NAVBAR === */
 .navbar {
   background: var(--primaryColor);
+  position: fixed;
+  width: 100vw;
+  z-index: 8;
+  height: 80px;
+  top: 0;
 }
 
 .navbar-brand fw-bold {
@@ -142,6 +215,24 @@ body {
 }
 
 
+.seat.disable {
+  background-color: #122C4F;
+  /* your theme color */
+  opacity: 0.5;
+  /* make it look muted / unavailable */
+  color: #fff;
+  /* seat number readable */
+  pointer-events: none;
+  /* disable clicking */
+  cursor: not-allowed;
+  /* shows disabled cursor */
+  transition: opacity 0.3s;
+  /* smooth visual effect */
+}
+
+
+
+
 .aisle {
   width: 30px;
 }
@@ -203,8 +294,14 @@ body {
   background: var(--primaryColor);
 }
 
+.continue-btn {
+  transition: all 0.5s ease-in;
+}
+
 .continue-btn:hover {
+  transform: scale(1.05);
   background: var(--hoverColor);
+  transition: all 0.2s ease-in-out;
 }
 
 /* ---  */
@@ -269,8 +366,9 @@ body {
 .checkout-form {
   max-width: 500px;
   margin: auto;
-  background-color: var(--primaryColor);
+  /* background-color: var(--primaryColor); */
   transition: all 0.4s ease-in-out;
+  border: 3px solid var(--primaryColor);
 }
 
 .checkout-form form,
@@ -280,6 +378,44 @@ body {
   transform: translateY(20px);
   transition: all 0.4s ease-in-out;
 }
+
+
+.checkout-form .receipt-voucher {
+  position: relative;
+  background: white;
+  border: 2px dashed var(--primaryColor);
+  overflow: hidden;
+  /* prevent watermark overflow */
+}
+
+/* Watermark */
+.checkout-form .receipt-voucher::before {
+  content: "Yoshida";
+  /* watermark text */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  /* center + rotate */
+  font-size: 5rem;
+  /* adjust size */
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.05);
+  /* very faint */
+  white-space: nowrap;
+  pointer-events: none;
+  /* don’t block clicks */
+  z-index: 1;
+}
+
+/* Keep content above watermark */
+.checkout-form .receipt-voucher>* {
+  position: relative;
+  z-index: 2;
+}
+
+
+
 
 .checkout-form form.active,
 .checkout-form .receipt-voucher.active {
@@ -364,6 +500,45 @@ body {
   transform: translateY(0);
 }
 
+
+
+.bookedDetail {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-10%);
+}
+
+
+.bookedDetail.show {
+  display: flex;
+}
+
+.bookedDetail .card {
+  width: 500px;
+}
+
+.card-head {
+  background: var(--primaryColor);
+}
+
+.booked-bus-name {
+  color: var(--primaryColor);
+}
+
+.booked-seat-badge {
+  background: var(--primaryColor);
+  padding: 10px 15px;
+}
+
 /* ==================================================================== */
 /* BusRoutes */
 
@@ -371,7 +546,7 @@ body {
   background-color: var(--primaryColor);
   color: var(--fontColor);
   text-align: center;
-  padding: 50px 20px;
+  padding: 80px 20px;
 }
 
 /* Rectangle Search Box */
@@ -439,10 +614,6 @@ body {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4);
-  /* semi-transparent dark overlay */
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 9999;
   /* make sure it is above all content */
 }
@@ -450,6 +621,10 @@ body {
 .bus_loader {
   z-index: 2;
   background: var(--primaryColor);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 50%;
   animation: bounce 0.3s ease-in infinite alternate;
@@ -472,6 +647,10 @@ body {
   }
 }
 
+.table-header th {
+  background: var(--primaryColor);
+  color: var(--fontColor);
+}
 
 /* FOOTER      */
 .footer {
@@ -503,6 +682,25 @@ body {
   padding: 0 0.5rem;
 }
 
+/* ================= ABOUT US ================= */
+.about-section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.about-img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 
 
 
@@ -519,9 +717,72 @@ body {
   .card {
     margin-top: 20px;
   }
+
+  .bus_loader svg {
+    width: 50px;
+    height: 50px;
+  }
 }
 
+/* MOBILE VIEW  */
 @media (max-width: 767px) {
+
+  /* LOADER  */
+  .bus_loader {
+    z-index: 2;
+    background: var(--primaryColor);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 50%;
+    animation: bounce 0.3s ease-in infinite alternate;
+  }
+
+
+  /* NAV BAR  */
+  .navbar-collapse {
+    margin-top: 0;
+    background: var(--primaryColor);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+  }
+
+  /* SEARCH BUS PAGE  */
+
+  .search-box span {
+    font-size: 14px !important;
+  }
+
+  .search-box h6 {
+    font-size: 13px !important;
+  }
+
+  /* -------  */
+
+  .checkout-breadcrum-item {
+    font-size: 11px;
+  }
+
+
+  #selectedBusName,
+  #selectedBusDate {
+    font-size: 17px !important;
+    /* smaller text on mobile */
+  }
+
+  .fs-4 {
+    font-size: 19px !important;
+    /* override Bootstrap fs-4 (default ~24px) */
+  }
+
+  .booked-fromLoc,
+  .booked-toLoc {
+    font-size: 17px !important;
+  }
+
   .bus {
     padding: 20px;
     height: auto;
@@ -548,45 +809,50 @@ body {
     display: block;
     margin: 5px 0;
   }
-  
-/* Popular Routes Section */
-.popular-routes .row {
-  align-items: stretch; /* ensures all cards in the row have equal height */
-}
 
-/* Cards layout */
-.popular-routes .card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease;
-}
+  /* Popular Routes Section */
+  .popular-routes .row {
+    align-items: stretch;
+    /* ensures all cards in the row have equal height */
+  }
 
-/* Route images */
-.popular-routes .route-img {
-  width: 100%;
-  height: 200px;        /* fixed height for all images */
-  object-fit: cover;    /* crop image instead of stretching */
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  transition: transform 0.3s ease;
-}
+  /* Cards layout */
+  .popular-routes .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+  }
 
-/* Hover zoom effect */
-.popular-routes .route-img:hover {
-  transform: scale(1.05);
-}
+  /* Route images */
+  .popular-routes .route-img {
+    width: 100%;
+    height: 200px;
+    /* fixed height for all images */
+    object-fit: cover;
+    /* crop image instead of stretching */
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    transition: transform 0.3s ease;
+  }
 
-/* Card body to fill remaining space */
-.popular-routes .card-body {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;      /* vertical centering of text */
-  justify-content: center;  /* horizontal centering */
-  padding: 1rem;
-}
+  /* Hover zoom effect */
+  .popular-routes .route-img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Card body to fill remaining space */
+  .popular-routes .card-body {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    /* vertical centering of text */
+    justify-content: center;
+    /* horizontal centering */
+    padding: 1rem;
+  }
 
 
 

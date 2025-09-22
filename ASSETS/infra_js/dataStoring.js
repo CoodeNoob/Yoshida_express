@@ -32,6 +32,10 @@ function formatDateTime(date) {
     return `${year}-${month}-${day}, ${hours}:${minutes} ${ampm}`;
 }
 
+
+
+if(!localStorage.getItem("Buses"))
+{
 // DataStoring For Bus
 fetch("../ASSETS/DATA_ASSETS/bus.json")
     .then(response => response.json())
@@ -43,6 +47,8 @@ fetch("../ASSETS/DATA_ASSETS/bus.json")
         localStorage.setItem("Buses", JSON.stringify(buses));
     })
     .catch(err => console.error("Error loading bus.json:", err));
+}
+
 
 // DataStoring For Location
 fetch("../ASSETS/DATA_ASSETS/locations.json")

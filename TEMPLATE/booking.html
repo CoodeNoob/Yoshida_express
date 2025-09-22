@@ -17,11 +17,11 @@
     <!-- Header NAV  -->
     <div id="header_block"></div>
 
-    <div class="container my-3">
+    <div class="container mt-80 p-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-white p-3 rounded shadow-sm">
                 <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none">Home</a></li>
-                <li class="breadcrumb-item" aria-current="page">Search Buses</li>
+                <li class="breadcrumb-item" aria-current="page" id="goBackSearch" style="cursor: pointer;">Search Buses</li>
                 <li class="breadcrumb-item" aria-current="page">Book Seats</li>
             </ol>
         </nav>
@@ -46,11 +46,11 @@
                     <div class="d-flex justify-content-between mb-3">
                         <div class="text-center flex-fill p-3 bg-light rounded-3 me-2">
                             <h6 class="text-muted mb-1">From</h6>
-                            <h5 class="fw-bold" id="fromLocation"></h5>
+                            <h5 class="fw-bold booked-fromLoc" id="fromLocation"></h5>
                         </div>
                         <div class="text-center flex-fill p-3 bg-light rounded-3 ms-2">
                             <h6 class="text-muted mb-1">To</h6>
-                            <h5 class="fw-bold" id="toLocation"></h5>
+                            <h5 class="fw-bold booked-toLoc" id="toLocation"></h5>
                         </div>
                     </div>
 

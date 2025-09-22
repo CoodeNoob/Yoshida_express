@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let fromLocation = params.get("fromLocation");
         let toLocation = params.get("toLocation");
 
+        //STORE TO  THE LOCALSTORAGE FOR 
+        localStorage.setItem("lastSearchParams", JSON.stringify({
+            date: date,
+            fromLocation: fromLocation,
+            toLocation: toLocation
+        }));
+
         let from = routes[fromLocation];
         let to = routes[toLocation];
 
@@ -36,21 +43,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
             foundBuses.forEach(([id, bus]) => {
                 busResults.innerHTML += `
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 bus-data">
                   <div class="card shadow-sm h-100">
                     <div class="card-body">
-                      <h5 class="card-title fw-bold text-primary">${bus.BusName}</h5>
+                      <h5 class="card-title fw-bold busName">${bus.BusName}</h5>
                       <p class="card-text mb-1"><strong>Type:</strong> ${bus.BusType}</p>
                       <p class="card-text mb-1"><strong>From:</strong> ${bus.Route.From} → <strong>To:</strong> ${bus.Route.To}</p>
                       <p class="card-text mb-1"><strong>Total Seats:</strong> ${bus.TotalSeat}</p>
                       <p class="card-text mb-1"><strong>Available:</strong> ${bus.AvailableSeats}</p>
                       <p class="card-text text-success fw-bold"><strong>Price:</strong> ${bus.UnitSeatPrice.toLocaleString()} MMK</p>
-                      <button class="btn btn-sm btn-danger mt-2 reserve-btn" data-bus-id="${id}">
+                      <button class="btn btn-sm text-white  mt-2 reserve-btn" data-bus-id="${id}">
                         Reserve Seat
                       </button>
                     </div>
                   </div>
                 </div>`;
+
+
+                setTimeout(() => {
+                    const busCards = document.querySelectorAll(".bus-data");
+                    busCards.forEach((card, index) => {
+                        setTimeout(() => card.classList.add("show"), index * 170);
+                    });
+                }, 120);
             });
         } else {
             document.getElementById("carsNotFound").classList.remove("d-none");

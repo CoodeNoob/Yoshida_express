@@ -13,18 +13,17 @@
 <body>
 
   <div class="loader-container d-none" id="loader-container">
-
   </div>
 
   <!-- Navbar -->
   <div id="header_block"></div>
 
   <!-- Hero Section -->
-  <div class="hero text-center text-md-start">
+  <div class="hero text-center text-md-start mt-80">
     <div class="container d-md-flex align-items-center justify-content-between">
       <div class="hero-text mb-4 mb-md-0">
-        <h2>Get Bus Tickets Across Myanmar</h2>
-        <p>Fast and easy—book in just 3 minutes!</p>
+        <h2 class="fw-bold headFont">Get Bus Tickets Across Myanmar</h2>
+        <p>Fast and easy—book in just 3 minutes! Everytime, Everywhere</p>
       </div>
       <form class="d-flex flex-column m-2 flex-md-row align-items-stretch bg-white p-3 rounded shadow gap-2"
         style="min-width:300px; max-width:800px; margin:auto;" id="route-search-form"
@@ -35,8 +34,8 @@
         <select class="form-select w-auto" aria-label="Default select example" id="toLocation" name="toLocation">
         </select>
 
-        <input type="date" class="form-control" name="date">
-        <button type="submit" class="btn btn-primary" style="background: #3B5B8A;">SEARCH</button>
+        <input type="date" class="form-control" name="date" placeholder="select date">
+        <button type="submit" class="button-search">SEARCH</button>
       </form>
 
     </div>
@@ -44,6 +43,7 @@
 
   <!-- Features Section -->
   <div class="container py-5">
+    <h3 class="mb-4 text-center">Why Yoshida?</h3>
     <div class="row g-4">
       <div class="col-md-6 col-lg-3">
         <div class="card feature-card text-center p-4 h-100">
@@ -51,7 +51,7 @@
           <h5>Welcome</h5>
           <p>Book your bus tickets online easily, check schedules, and plan your journey with comfort and convenience.
           </p>
-         
+
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
@@ -59,7 +59,7 @@
           <div class="mb-3 fs-1">⚡</div>
           <h5>Instant Booking</h5>
           <p>Book your trip in less than 3 minutes. Instant confirmation after payment.</p>
-       
+
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
@@ -67,7 +67,7 @@
           <div class="mb-3 fs-1">🔒</div>
           <h5>Secure Payment</h5>
           <p>Pay with VISA, MASTER, MPU, WaveMoney, CBPay, KBZPay and MABPay.</p>
-        
+
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
@@ -75,9 +75,108 @@
           <div class="mb-3 fs-1">📞</div>
           <h5>Help 24/7</h5>
           <p>Our support center is available 24/7 for your questions and concerns.</p>
-         
+
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="py-5">
+    <div class="container text-center">
+      <h3 class="mb-4">What Our Customers Say</h3>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm h-100">
+            <p>"Booking was super fast and easy. I saved so much time!"</p>
+            <h6 class="fw-bold">- Aye Chan</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm h-100">
+            <p>"The buses were clean and on time. Payment was smooth too."</p>
+            <h6 class="fw-bold">- Thura</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm h-100">
+            <p>"I loved that I could book with KBZPay instantly. Very convenient."</p>
+            <h6 class="fw-bold">- May Zin</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container py-5 text-center">
+    <h3 class="mb-4">Our Impact</h3>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <h2 class="fw-bold">500+</h2>
+        <p>Buses Daily</p>
+      </div>
+      <div class="col-md-3">
+        <h2 class="fw-bold">50,000+</h2>
+        <p>Tickets Booked</p>
+      </div>
+      <div class="col-md-3">
+        <h2 class="fw-bold">100+</h2>
+        <p>Destinations</p>
+      </div>
+      <div class="col-md-3">
+        <h2 class="fw-bold">24/7</h2>
+        <p>Customer Support</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Popular Routes Section -->
+  <div class="container py-5 text-center">
+    <h3 class="mb-4">Popular Routes</h3>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="card route-card shadow-sm flex-fill">
+          <img src="./ASSETS/imgs/mandalay.png" class="card-img-top img-fluid" alt="Yangon - Mandalay"
+            style="height:200px; object-fit:cover;">
+          <div class="card-body d-flex justify-content-center align-items-center">
+            <h6 class="card-title mb-0">Yangon - Mandalay</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="card route-card shadow-sm flex-fill">
+          <img src="./ASSETS/imgs/bagan.png" class="card-img-top img-fluid" alt="Yangon - Bagan/Nyaung-U"
+            style="height:200px; object-fit:cover;">
+          <div class="card-body d-flex justify-content-center align-items-center">
+            <h6 class="card-title mb-0">Yangon - Bagan/Nyaung-U</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="card route-card shadow-sm flex-fill">
+          <img src="./ASSETS/imgs/naypyitaw.png" class="card-img-top img-fluid" alt="Yangon - Naypyitaw (Bawga)"
+            style="height:200px; object-fit:cover;">
+          <div class="card-body d-flex justify-content-center align-items-center">
+            <h6 class="card-title mb-0">Yangon - Naypyitaw (Bawga)</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="card route-card shadow-sm flex-fill">
+          <img src="./ASSETS/imgs/sagaing.jpg" class="card-img-top img-fluid" alt="Yangon - Sagaing"
+            style="height:200px; object-fit:cover;">
+          <div class="card-body d-flex justify-content-center align-items-center">
+            <h6 class="card-title mb-0">Yangon - Sagaing</h6>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -85,94 +184,103 @@
   <div class="bg-white py-5 text-center">
     <h3>We Accept</h3>
     <div class="d-flex flex-wrap justify-content-center align-items-center payment-logos">
-      <img src="../ASSETS/imgs/kpay1.png" alt="KBZPay">
-      <img src="../ASSETS/imgs/master.png" alt="Master">
-      <img src="../ASSETS/imgs/city3.png" alt="Citizen">
-      <img src="../ASSETS/imgs/wave.png" alt="Wave">
-      <img src="../ASSETS/imgs/a.png" alt="A+">
-      <img src="../ASSETS/imgs/onepay.png" alt="Onepay">
-      <img src="../ASSETS/imgs/uab.png" alt="UABPay">
-      <img src="../ASSETS/imgs/mab.png" alt="MAB">
-      <img src="../ASSETS/imgs/mpu.png" alt="MPU">
+      <img src="./ASSETS/imgs/kpay1.png" alt="KBZPay">
+      <img src="./ASSETS/imgs/master.png" alt="Master">
+      <img src="./ASSETS/imgs/city3.png" alt="Citizen">
+      <img src="./ASSETS/imgs/wave.png" alt="Wave">
+      <img src="./ASSETS/imgs/a.png" alt="A+">
+      <img src="./ASSETS/imgs/onepay.png" alt="Onepay">
+      <img src="./ASSETS/imgs/uab.png" alt="UABPay">
+      <img src="./ASSETS/imgs/mab.png" alt="MAB">
+      <img src="./ASSETS/imgs/mpu.png" alt="MPU">
     </div>
   </div>
- <!-- Popular Routes Section -->
-<div class="container py-5 text-center">
-  <h3 class="mb-4">Popular Routes</h3>
-  <div class="row g-4 justify-content-center">
 
-    <div class="col-md-6 col-lg-3 d-flex">
-      <div class="card shadow-sm flex-fill">
-        <img src="../ASSETS/imgs/mandalay.png" class="card-img-top img-fluid" alt="Yangon - Mandalay" style="height:200px; object-fit:cover;">
-        <div class="card-body d-flex justify-content-center align-items-center">
-          <h6 class="card-title mb-0">Yangon - Mandalay</h6>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3 d-flex">
-      <div class="card shadow-sm flex-fill">
-        <img src="../ASSETS/imgs/bagan.png" class="card-img-top img-fluid" alt="Yangon - Bagan/Nyaung-U" style="height:200px; object-fit:cover;">
-        <div class="card-body d-flex justify-content-center align-items-center">
-          <h6 class="card-title mb-0">Yangon - Bagan/Nyaung-U</h6>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3 d-flex">
-      <div class="card shadow-sm flex-fill">
-        <img src="../ASSETS/imgs/naypyitaw.png" class="card-img-top img-fluid" alt="Yangon - Naypyitaw (Bawga)" style="height:200px; object-fit:cover;">
-        <div class="card-body d-flex justify-content-center align-items-center">
-          <h6 class="card-title mb-0">Yangon - Naypyitaw (Bawga)</h6>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3 d-flex">
-      <div class="card shadow-sm flex-fill">
-        <img src="../ASSETS/imgs/sagaing.jpg" class="card-img-top img-fluid" alt="Yangon - Sagaing" style="height:200px; object-fit:cover;">
-        <div class="card-body d-flex justify-content-center align-items-center">
-          <h6 class="card-title mb-0">Yangon - Sagaing</h6>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-  <div class="container p-5 m-5"></div>
   <div id="footer_block"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- DATA LOADED  -->
-  <script src="../ASSETS/infra_js/dataStoring.js"></script>
+  <script src="./ASSETS/infra_js/dataStoring.js"></script>
   <!-- HEADER AND FOOTER LOADING  -->
-  <script src="../LAYOUTS/layoutLoading.js"></script>
-  <script src="../ASSETS/infra_js/DataPulling.js"></script>
+  <script src="./LAYOUTS/layoutLoading.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".feature-card");
+
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add("show");
+        }, index * 170);
+      });
+
+      const routes = document.querySelectorAll(".route-card");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add("show");
+              }, index * 150);
+              observer.unobserve(entry.target); // Animate once
+            } 
+          });
+        },
+        { threshold: 0.2 } // Trigger when 20% of card is visible
+      );
+
+      routes.forEach(route => observer.observe(route));
+    });
+  </script>
+
+  <script src="./ASSETS/infra_js/DataPulling.js"></script>
   <script>
     const form = document.getElementById("route-search-form");
     form.addEventListener("submit", (e) => {
-      e.preventDefault(); // stop immediate navigation
+      e.preventDefault();
+
+      // Get form fields
+      const from = document.getElementById("fromLocation");
+      const to = document.getElementById("toLocation");
+      const date = form.querySelector("input[name='date']");
+
+      let valid = true;
+
+      // Reset 
+      [from, to, date].forEach(el => el.style.border = "");
+
+      // Check 
+      if(!from.value || from.value === "From") {
+        from.style.border = "2px solid red";
+        valid = false;
+      }
+      if (!to.value || to.value === "To") {
+        to.style.border = "2px solid red";
+        valid = false;
+      }
+      if (!date.value) {
+        date.style.border = "2px solid red";
+        valid = false;
+      }
+
+      //
+      if (!valid) return;
 
       // Show loader
       document.getElementById("loader-container").classList.remove("d-none");
 
-      // Get form action URL
+      // Prepare query string and redirect
       const actionUrl = form.getAttribute("action");
-
-      // Optional: get form data if needed
       const formData = new FormData(form);
       const queryString = new URLSearchParams(formData).toString();
 
-      // Navigate 
       setTimeout(() => {
         document.getElementById("loader-container").classList.add("d-none");
         window.location.href = actionUrl + "?" + queryString;
       }, 500);
     });
   </script>
+
 </body>
 
 </html>

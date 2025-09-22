@@ -5,10 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
     const sortSelect = document.getElementById("sortSelect");
 
-    // Function to render table
+    // table render
     function renderTable(data) {
         tBody.innerHTML = ""; 
         data.forEach(booking => {
+            let seatBadges = booking.seats
+                .split(",")
+                .map(seat => `<span class="badge m-1 p-2" style="background:#122C4F; color:#fff;">${seat.trim()}</span>`)
+                .join(" "); 
+
             let tRow = document.createElement("tr");
             tRow.innerHTML = `
                 <td>${booking.name}</td>
@@ -16,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${booking.from} → ${booking.to}</td>
                 <td>${booking.date} ${booking.time}</td>
                 <td>${booking.seats.split(",").length}</td>
+                <td>${seatBadges}</td>
                 <td>MMK ${booking.totalPrice}</td>
                 <td>${booking.paymentMethod}</td>
             `;
@@ -23,10 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Initial render
+    // render
     renderTable(checkoutHistory);
 
-    // Sort function
+    // Sort 
     sortSelect.addEventListener("change", () => {
         let sortedData = [...checkoutHistory]; // clone array
 
@@ -35,21 +41,20 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (sortSelect.value === "price") {
             sortedData.sort((a, b) => b.totalPrice - a.totalPrice);
         } else if (sortSelect.value === "date") {
-            // convert date string to Date object
             sortedData.sort((a, b) => new Date(b.date + " " + b.time) - new Date(a.date + " " + a.time));
         }
 
         renderTable(sortedData);
     });
 
-    // Optional: search filter
     searchInput.addEventListener("input", () => {
         const query = searchInput.value.toLowerCase();
         const filtered = checkoutHistory.filter(b =>
             b.name.toLowerCase().includes(query) ||
             b.busName.toLowerCase().includes(query) ||
             b.from.toLowerCase().includes(query) ||
-            b.to.toLowerCase().includes(query)
+            b.to.toLowerCase().includes(query) ||
+            b.seats.toLowerCase().includes(query)
         );
         renderTable(filtered);
     });
