@@ -22,8 +22,11 @@ It is built with **HTML, CSS, JavaScript, LocalStorage, and Bootstrap** to provi
 - Make payment
 - View Booked History
 ## Site map of the system
-
 ![Alt text](./ASSETS/imgs/Screenshot%20from%202025-09-22%2000-06-44.png)
+
+## Use Case Diagram
+
+![Alt text](./ASSETS/imgs/useCase.png)
 
 ## How to Run
 1. Clone this repository:
