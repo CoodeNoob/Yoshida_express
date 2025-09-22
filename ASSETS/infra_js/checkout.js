@@ -7,6 +7,7 @@ let bookedBusInfo = null;
 document.addEventListener("DOMContentLoaded", () => {
     const bookedInfoString = localStorage.getItem("bookedBusInfo");
     bookedBusInfo = JSON.parse(bookedInfoString);
+
 });
 
 function selectPayment(card, type) {
@@ -49,7 +50,7 @@ function confirmPayment() {
     setTimeout(() => receipt.classList.add("active"), 200);
 
     // Update progress bar
-    document.querySelectorAll(".progress-step")[2].classList.add("active");
+    document.   All(".progress-step")[2].classList.add("active");
 
     // Create a single object with all booking data
     const newBooking = {

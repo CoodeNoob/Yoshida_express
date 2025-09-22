@@ -1,8 +1,4 @@
 let locations = JSON.parse(localStorage.getItem("Locations"));
-
-console.log(locations);
-// OUTPUT => {"1":"Yangon","2":"Mandalay","3":"Magway","4":"NayPyiDaw","5":"Saging","6":"Bagan","7":"Taunggyi","8":"Myeik"}
-
 // LOADING OF FROM AND TO LOCATIONS
 let fromLocation = document.getElementById("fromLocation");
 let toLocation = document.getElementById("toLocation");
