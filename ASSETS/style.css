@@ -9,6 +9,8 @@ body {
   position: relative;
   height: 100vh;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 :root {
@@ -137,7 +139,7 @@ body {
 /* BUUS */
 /* === GLOBAL STRUCTURE === */
 #footer_block {
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 /* === NAVBAR === */
