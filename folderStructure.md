@@ -1,0 +1,53 @@
+```
+└── 📁ASSETS
+    └── 📁DATA_ASSETS
+        ├── bus.json
+        ├── locations.json
+    └── 📁imgs
+        ├── a.png
+        ├── aboutus.jpg
+        ├── bagan.png
+        ├── cash.png
+        ├── city3.png
+        ├── image.png
+        ├── kpay.png
+        ├── kpay1.png
+        ├── logo.jpg
+        ├── mab.png
+        ├── mandalay.png
+        ├── master.png
+        ├── mpu.png
+        ├── naypyitaw.png
+        ├── onepay.png
+        ├── sagaing.jpg
+        ├── Screenshot from 2025-09-22 00-06-44.png
+        ├── sorry.png
+        ├── thank.png
+        ├── uab.png
+        ├── useCase.png
+        ├── wave.png
+    └── 📁infra_js
+        ├── bookingBus.js
+        ├── bus.js
+        ├── checkout.js
+        ├── checkoutHistory.js
+        ├── DataPulling.js
+        ├── dataStoring.js
+        ├── defaultLoading.js
+        ├── searchBus.js
+    └── style.css
+└── 📁LAYOUTS
+    ├── footer.html
+    ├── header.html
+    ├── layoutLoading.js
+    └── loader.html
+└── 📁TEMPLATE
+    ├── Aboutus.html
+    ├── booking.html
+    ├── checkout.html
+    ├── history_page.html
+    ├── home.html
+    ├── Loader.html
+    └── searchBus.html
+└── index.html           
+```
