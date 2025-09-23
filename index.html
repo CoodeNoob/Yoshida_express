@@ -28,15 +28,37 @@
       <form class="d-flex flex-column m-2 flex-md-row align-items-stretch bg-white p-3 rounded shadow gap-2"
         style="min-width:300px; max-width:800px; margin:auto;" id="route-search-form"
         action="./TEMPLATE/searchBus.html">
-        <select class="form-select w-auto" aria-label="Default select example" id="fromLocation" name="fromLocation">
-        </select>
 
-        <select class="form-select w-auto" aria-label="Default select example" id="toLocation" name="toLocation">
-        </select>
+        <!-- From Location -->
+        <div class="form-floating">
+          <select class="form-select" id="fromLocation" name="fromLocation" required>
+            <!-- options will be added dynamically -->
+          </select>
+          <label for="fromLocation">From</label>
+        </div>
 
-        <input type="date" class="form-control" name="date" placeholder="select date">
-        <button type="submit" class="button-search">SEARCH</button>
+        <!-- To Location -->
+        <div class="form-floating">
+          <select class="form-select" id="toLocation" name="toLocation" required>
+            <!-- options will be added dynamically -->
+          </select>
+          <label for="toLocation">To</label>
+        </div>
+
+        <!-- Date -->
+        <div class="form-floating">
+          <input type="date" class="form-control" id="travelDate" name="date">
+          <label for="travelDate">Select Date</label>
+        </div>
+
+
+        <!-- Search Button -->
+        <div class="d-flex align-items-center">
+          <button type="submit" class="button-search h-100">SEARCH</button>
+        </div>
+
       </form>
+
 
     </div>
   </div>
@@ -223,7 +245,7 @@
                 entry.target.classList.add("show");
               }, index * 150);
               observer.unobserve(entry.target); // Animate once
-            } 
+            }
           });
         },
         { threshold: 0.2 } // Trigger when 20% of card is visible
@@ -250,11 +272,11 @@
       [from, to, date].forEach(el => el.style.border = "");
 
       // Check 
-      if(!from.value || from.value === "From") {
+      if (!from.value || from.value === "Location") {
         from.style.border = "2px solid red";
         valid = false;
       }
-      if (!to.value || to.value === "To") {
+      if (!to.value || to.value === "Location") {
         to.style.border = "2px solid red";
         valid = false;
       }

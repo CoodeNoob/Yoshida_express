@@ -7,7 +7,7 @@ function loadLocationList(selectElement, ary,key) {
     selectElement.innerHTML = "";
 
     let defaultOption = document.createElement("option");
-    defaultOption.text = key;
+    defaultOption.text = "Location";
     defaultOption.disabled = true;
     defaultOption.selected = true;
     selectElement.appendChild(defaultOption);
