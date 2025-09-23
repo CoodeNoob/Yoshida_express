@@ -28,10 +28,24 @@ It is built with **HTML, CSS, JavaScript, LocalStorage, and Bootstrap** to provi
 
 ![Alt text](./ASSETS/imgs/useCase.png)
 
+## System Implementation Structure
+```
+Yoshida
+└── 📁ASSETS
+    └── 📁DATA_ASSETS
+    └── 📁imgs
+    └── 📁infra_js
+    └── style.css
+└── 📁LAYOUTS
+└── 📁TEMPLATE
+└── index.html           
+```
+
+
 ## How to Run
 1. Clone this repository:
    ```bash
-   git clone https://github.com/CoodeNoob/Yoshida_express.git
+   https://coodenoob.github.io/Yoshida_express/
 
 ## Acknowledgments
 Special thanks to **our team members** and instructors for their guidance.  
