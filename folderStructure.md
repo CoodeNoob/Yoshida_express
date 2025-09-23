@@ -1,31 +1,10 @@
 ```
 └── 📁ASSETS
     └── 📁DATA_ASSETS
-        ├── bus.json
-        ├── locations.json
     └── 📁imgs
     └── 📁infra_js
-        ├── bookingBus.js
-        ├── bus.js
-        ├── checkout.js
-        ├── checkoutHistory.js
-        ├── DataPulling.js
-        ├── dataStoring.js
-        ├── defaultLoading.js
-        ├── searchBus.js
     └── style.css
 └── 📁LAYOUTS
-    ├── footer.html
-    ├── header.html
-    ├── layoutLoading.js
-    └── loader.html
 └── 📁TEMPLATE
-    ├── Aboutus.html
-    ├── booking.html
-    ├── checkout.html
-    ├── history_page.html
-    ├── home.html
-    ├── Loader.html
-    └── searchBus.html
 └── index.html           
 ```
